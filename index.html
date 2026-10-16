@@ -1,57 +1,52 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>AuraCab | Premium Taxi & Mobility Services</title>
-  <meta name="description" content="Reliable, premium taxi and chauffeur services for local travel, airport transfers, one-way trips, and outstation journeys. Direct WhatsApp booking with upfront quotes.">
-  
-  <!-- Preconnect and Google Fonts (Plus Jakarta Sans & Inter) -->
+  <title>AuraCab | Premium Chauffeur &amp; Taxi Service</title>
+  <meta name="description" content="Premium taxi and chauffeur services for local transit, airport transfers, one-way trips, and outstation journeys. Direct WhatsApp booking with upfront pricing.">
+
+  <!-- Fonts & Font Awesome 6 Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  
-  <!-- Font Awesome Icons for automotive & UI symbols -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
     /* ==========================================================================
-       1. CSS DESIGN SYSTEM & RESET
+       1. AUTOMOTIVE PREMIUM DESIGN SYSTEM (Slate Charcoal & Warm Amber)
        ========================================================================== */
     :root {
-      --color-charcoal-dark: #0f1216;
-      --color-charcoal-surface: #181c24;
-      --color-charcoal-border: #282f3d;
-      --color-amber-primary: #d97706;
-      --color-amber-hover: #b45309;
-      --color-amber-light: #fef3c7;
-      --color-amber-accent: #f59e0b;
-      --color-text-main: #1e2530;
-      --color-text-muted: #566376;
-      --color-text-light: #94a3b8;
-      --color-bg-light: #f8fafc;
-      --color-bg-white: #ffffff;
-      --color-border-subtle: #e2e8f0;
-      --color-border-focus: #f59e0b;
-      --color-whatsapp: #25d366;
-      --color-whatsapp-dark: #128c7e;
-      
+      --bg-body: #0b0f19;
+      --bg-surface: #131b2e;
+      --bg-surface-elevated: #1a243c;
+      --bg-input: #0e1526;
+      --border-subtle: #24304f;
+      --border-focus: #f59e0b;
+
+      --accent-amber: #f59e0b;
+      --accent-amber-dark: #d97706;
+      --accent-amber-glow: rgba(245, 158, 11, 0.2);
+
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+
+      --whatsapp-green: #25d366;
+      --whatsapp-dark: #128c7e;
+
       --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
-      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
-      
+
       --radius-sm: 6px;
-      --radius-md: 8px;
-      --radius-lg: 12px;
-      --radius-xl: 16px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-xl: 18px;
       --radius-full: 9999px;
-      
-      --transition-standard: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+      --shadow-card: 0 10px 25px -5px rgba(0, 0, 0, 0.45), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+      --shadow-amber: 0 4px 18px rgba(245, 158, 11, 0.3);
+      --transition-fast: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     *, *::before, *::after {
@@ -63,12 +58,10 @@
     html {
       font-family: var(--font-body);
       font-size: 16px;
-      line-height: 1.5;
-      color: var(--color-text-main);
-      background-color: var(--color-bg-light);
+      background-color: var(--bg-body);
+      color: var(--text-main);
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
     body {
@@ -77,6 +70,7 @@
       flex-direction: column;
       overflow-x: hidden;
       width: 100%;
+      background-color: var(--bg-body);
     }
 
     img {
@@ -89,7 +83,7 @@
     a {
       color: inherit;
       text-decoration: none;
-      transition: var(--transition-standard);
+      transition: var(--transition-fast);
     }
 
     button, input, select, textarea {
@@ -98,7 +92,6 @@
       color: inherit;
     }
 
-    /* Container */
     .container {
       width: 100%;
       max-width: 1240px;
@@ -115,21 +108,22 @@
       }
     }
 
-    /* Typography */
     h1, h2, h3, h4, h5, h6 {
       font-family: var(--font-display);
       font-weight: 700;
-      color: var(--color-charcoal-dark);
+      color: #ffffff;
       line-height: 1.2;
       overflow-wrap: break-word;
     }
 
     p {
-      color: var(--color-text-muted);
+      color: var(--text-muted);
+      line-height: 1.6;
       overflow-wrap: break-word;
     }
 
-    .section-eyebrow {
+    /* Badge & Eyebrows */
+    .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -137,31 +131,30 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--color-amber-primary);
-      margin-bottom: 0.5rem;
+      color: var(--accent-amber);
+      margin-bottom: 0.65rem;
     }
 
     .section-title {
-      font-size: 1.875rem;
+      font-size: 2rem;
       font-weight: 800;
       letter-spacing: -0.02em;
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
     }
 
     .section-desc {
       font-size: 1.05rem;
-      max-width: 650px;
-      margin-bottom: 2.5rem;
-      line-height: 1.6;
+      max-width: 660px;
+      margin-bottom: 2.75rem;
     }
 
     @media (min-width: 768px) {
       .section-title {
-        font-size: 2.35rem;
+        font-size: 2.45rem;
       }
     }
 
-    /* UI Buttons */
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -169,81 +162,73 @@
       gap: 0.6rem;
       font-family: var(--font-display);
       font-weight: 600;
-      font-size: 0.9375rem;
+      font-size: 0.925rem;
       padding: 0.75rem 1.4rem;
       border-radius: var(--radius-md);
       cursor: pointer;
       border: 1px solid transparent;
-      transition: var(--transition-standard);
+      transition: var(--transition-fast);
       text-align: center;
       white-space: nowrap;
       user-select: none;
     }
 
     .btn:focus-visible {
-      outline: 2px solid var(--color-amber-accent);
+      outline: 2px solid var(--accent-amber);
       outline-offset: 2px;
     }
 
-    .btn-primary {
-      background-color: var(--color-amber-primary);
-      color: #ffffff;
-      border-color: var(--color-amber-primary);
+    .btn-amber {
+      background-color: var(--accent-amber);
+      color: #0b0f19;
+      border-color: var(--accent-amber);
+      font-weight: 700;
     }
-    .btn-primary:hover {
-      background-color: var(--color-amber-hover);
-      border-color: var(--color-amber-hover);
-      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
-    }
-
-    .btn-dark {
-      background-color: var(--color-charcoal-dark);
-      color: #ffffff;
-      border-color: var(--color-charcoal-dark);
-    }
-    .btn-dark:hover {
-      background-color: var(--color-charcoal-surface);
-      box-shadow: 0 4px 12px rgba(15, 18, 22, 0.25);
+    .btn-amber:hover {
+      background-color: #fca515;
+      box-shadow: var(--shadow-amber);
+      color: #000000;
     }
 
     .btn-outline {
       background-color: transparent;
-      color: var(--color-charcoal-dark);
-      border-color: var(--color-border-subtle);
+      color: #f1f5f9;
+      border-color: var(--border-subtle);
     }
     .btn-outline:hover {
-      background-color: #ffffff;
-      border-color: var(--color-charcoal-dark);
-    }
-
-    .btn-outline-white {
-      background-color: transparent;
-      color: #ffffff;
-      border-color: rgba(255, 255, 255, 0.25);
-    }
-    .btn-outline-white:hover {
-      background-color: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.06);
       border-color: #ffffff;
     }
 
-    .btn-whatsapp {
-      background-color: var(--color-whatsapp);
+    .btn-surface {
+      background-color: var(--bg-surface-elevated);
       color: #ffffff;
-      border-color: var(--color-whatsapp);
+      border-color: var(--border-subtle);
+    }
+    .btn-surface:hover {
+      border-color: var(--accent-amber);
+      background-color: #202d4b;
+    }
+
+    .btn-whatsapp {
+      background-color: var(--whatsapp-green);
+      color: #ffffff;
+      border-color: var(--whatsapp-green);
+      font-weight: 600;
     }
     .btn-whatsapp:hover {
-      background-color: var(--color-whatsapp-dark);
-      border-color: var(--color-whatsapp-dark);
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+      background-color: var(--whatsapp-dark);
+      border-color: var(--whatsapp-dark);
+      box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
     }
 
     .btn-sm {
-      padding: 0.5rem 1rem;
-      font-size: 0.85rem;
+      padding: 0.5rem 0.95rem;
+      font-size: 0.825rem;
     }
 
     .btn-lg {
-      padding: 0.95rem 1.8rem;
+      padding: 0.95rem 1.75rem;
       font-size: 1rem;
     }
 
@@ -251,18 +236,17 @@
       width: 100%;
     }
 
-    /* Badge & Tag */
-    .badge {
+    .badge-pill {
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
       padding: 0.25rem 0.65rem;
-      border-radius: var(--radius-sm);
+      border-radius: var(--radius-full);
       font-size: 0.75rem;
       font-weight: 600;
-      background-color: #f1f5f9;
-      color: var(--color-charcoal-dark);
-      border: 1px solid var(--color-border-subtle);
+      background-color: rgba(245, 158, 11, 0.12);
+      color: var(--accent-amber);
+      border: 1px solid rgba(245, 158, 11, 0.3);
     }
 
     /* ==========================================================================
@@ -272,11 +256,10 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background-color: rgba(15, 18, 22, 0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--color-charcoal-border);
-      transition: background-color 0.2s, box-shadow 0.2s;
+      background-color: rgba(11, 15, 25, 0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .header-inner {
@@ -297,21 +280,22 @@
       letter-spacing: -0.02em;
     }
 
-    .brand-logo .logo-icon {
+    .logo-badge {
       width: 38px;
       height: 38px;
-      background: linear-gradient(135deg, var(--color-amber-accent), var(--color-amber-primary));
+      background: linear-gradient(135deg, var(--accent-amber), var(--accent-amber-dark));
       border-radius: var(--radius-md);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ffffff;
+      color: #0b0f19;
       font-size: 1.1rem;
-      box-shadow: 0 2px 6px rgba(217, 119, 6, 0.35);
+      font-weight: 900;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
     }
 
     .brand-logo span.accent {
-      color: var(--color-amber-accent);
+      color: var(--accent-amber);
     }
 
     /* Desktop Navigation */
@@ -334,7 +318,6 @@
       color: #cbd5e1;
       padding: 0.5rem 0.85rem;
       border-radius: var(--radius-sm);
-      position: relative;
       display: inline-flex;
       align-items: center;
       gap: 0.35rem;
@@ -346,11 +329,10 @@
     }
 
     .nav-link.active {
+      color: var(--accent-amber);
       font-weight: 600;
-      color: var(--color-amber-accent);
     }
 
-    /* Desktop Dropdown */
     .nav-dropdown-wrapper {
       position: relative;
     }
@@ -360,12 +342,12 @@
       top: 100%;
       left: 0;
       margin-top: 0.5rem;
-      min-width: 230px;
-      background-color: var(--color-charcoal-surface);
-      border: 1px solid var(--color-charcoal-border);
+      min-width: 220px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       padding: 0.5rem;
-      box-shadow: var(--shadow-xl);
+      box-shadow: var(--shadow-card);
       opacity: 0;
       visibility: hidden;
       transform: translateY(6px);
@@ -393,22 +375,20 @@
 
     .dropdown-item i {
       width: 18px;
-      color: var(--color-amber-accent);
-      font-size: 0.9rem;
+      color: var(--accent-amber);
     }
 
     .dropdown-item:hover, .dropdown-item.active {
-      background-color: rgba(255, 255, 255, 0.08);
+      background-color: rgba(255, 255, 255, 0.07);
       color: #ffffff;
     }
 
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.85rem;
     }
 
-    /* Hamburger Button */
     .menu-toggle-btn {
       display: flex;
       align-items: center;
@@ -417,9 +397,9 @@
       height: 42px;
       border-radius: var(--radius-md);
       background-color: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
+      border: 1px solid var(--border-subtle);
       color: #ffffff;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       cursor: pointer;
     }
 
@@ -429,18 +409,17 @@
       }
     }
 
-    /* Mobile Nav Drawer */
+    /* Mobile Drawer */
     .mobile-drawer-backdrop {
       position: fixed;
       inset: 0;
-      background-color: rgba(0, 0, 0, 0.65);
+      background-color: rgba(0, 0, 0, 0.7);
       backdrop-filter: blur(4px);
       z-index: 1998;
       opacity: 0;
       visibility: hidden;
       transition: opacity 0.3s, visibility 0.3s;
     }
-
     .mobile-drawer-backdrop.open {
       opacity: 1;
       visibility: visible;
@@ -453,8 +432,8 @@
       bottom: 0;
       width: 85%;
       max-width: 360px;
-      background-color: var(--color-charcoal-dark);
-      border-left: 1px solid var(--color-charcoal-border);
+      background-color: var(--bg-surface);
+      border-left: 1px solid var(--border-subtle);
       z-index: 1999;
       transform: translateX(100%);
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
@@ -463,7 +442,6 @@
       overflow-y: auto;
       padding: 1.5rem;
     }
-
     .mobile-drawer.open {
       transform: translateX(0);
     }
@@ -473,14 +451,14 @@
       align-items: center;
       justify-content: space-between;
       padding-bottom: 1.25rem;
-      border-bottom: 1px solid var(--color-charcoal-border);
+      border-bottom: 1px solid var(--border-subtle);
       margin-bottom: 1.25rem;
     }
 
     .drawer-close-btn {
       background: none;
       border: none;
-      color: #94a3b8;
+      color: var(--text-muted);
       font-size: 1.4rem;
       cursor: pointer;
       padding: 0.3rem;
@@ -499,15 +477,14 @@
       padding: 0.85rem 1rem;
       font-family: var(--font-display);
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: #e2e8f0;
       border-radius: var(--radius-md);
       cursor: pointer;
     }
-
     .mobile-nav-link:hover, .mobile-nav-link.active {
-      background-color: rgba(255, 255, 255, 0.06);
-      color: var(--color-amber-accent);
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--accent-amber);
     }
 
     .mobile-submenu {
@@ -517,102 +494,23 @@
       gap: 0.2rem;
       margin-bottom: 0.5rem;
     }
-
     .mobile-submenu.open {
       display: flex;
     }
 
     .mobile-sub-link {
       padding: 0.65rem 0.85rem;
-      font-size: 0.9rem;
-      color: #94a3b8;
+      font-size: 0.875rem;
+      color: var(--text-muted);
       border-radius: var(--radius-sm);
     }
-
     .mobile-sub-link:hover, .mobile-sub-link.active {
       color: #ffffff;
       background-color: rgba(255, 255, 255, 0.04);
     }
 
     /* ==========================================================================
-       3. FOOTER
-       ========================================================================== */
-    .site-footer {
-      background-color: var(--color-charcoal-dark);
-      color: #94a3b8;
-      border-top: 1px solid var(--color-charcoal-border);
-      padding-top: 4rem;
-      padding-bottom: 2rem;
-      margin-top: auto;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-      margin-bottom: 3.5rem;
-    }
-
-    @media (min-width: 640px) {
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .footer-grid {
-        grid-template-columns: 2fr 1fr 1fr 1.2fr;
-      }
-    }
-
-    .footer-title {
-      font-family: var(--font-display);
-      font-size: 0.95rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #ffffff;
-      margin-bottom: 1.25rem;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.65rem;
-    }
-
-    .footer-links a {
-      font-size: 0.9rem;
-      color: #94a3b8;
-    }
-
-    .footer-links a:hover {
-      color: var(--color-amber-accent);
-      padding-left: 4px;
-    }
-
-    .footer-bottom {
-      border-top: 1px solid var(--color-charcoal-border);
-      padding-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1rem;
-      text-align: center;
-      font-size: 0.85rem;
-    }
-
-    @media (min-width: 768px) {
-      .footer-bottom {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-      }
-    }
-
-    /* ==========================================================================
-       4. FLOATING WHATSAPP BUTTON
+       3. FLOATING WHATSAPP BUTTON
        ========================================================================== */
     .floating-whatsapp {
       position: fixed;
@@ -622,38 +520,32 @@
       width: 58px;
       height: 58px;
       border-radius: var(--radius-full);
-      background-color: var(--color-whatsapp);
+      background-color: var(--whatsapp-green);
       color: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45);
-      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
       border: 2px solid #ffffff;
+      transition: var(--transition-fast);
     }
 
     .floating-whatsapp i {
-      font-size: 1.85rem;
+      font-size: 1.9rem;
     }
 
     .floating-whatsapp:hover {
       transform: scale(1.08);
-      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6);
       color: #ffffff;
     }
 
-    .floating-whatsapp:focus-visible {
-      outline: 3px solid var(--color-charcoal-dark);
-      outline-offset: 3px;
-    }
-
-    /* Tooltip */
     .whatsapp-tooltip {
       position: absolute;
       right: 70px;
-      background-color: var(--color-charcoal-dark);
+      background-color: var(--bg-surface-elevated);
       color: #ffffff;
-      padding: 0.4rem 0.85rem;
+      padding: 0.45rem 0.9rem;
       border-radius: var(--radius-md);
       font-size: 0.8rem;
       font-weight: 600;
@@ -662,7 +554,8 @@
       opacity: 0;
       transform: translateX(10px);
       transition: opacity 0.2s, transform 0.2s;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--border-subtle);
     }
 
     .floating-whatsapp:hover .whatsapp-tooltip {
@@ -683,23 +576,23 @@
     }
 
     /* ==========================================================================
-       5. HERO & BOOKING WIDGET
+       4. HERO & QUICK BOOKING WIDGET
        ========================================================================== */
     .hero-section {
       position: relative;
-      background-color: var(--color-charcoal-dark);
-      color: #ffffff;
+      background-color: var(--bg-body);
       padding: 3.5rem 0 5rem;
       overflow: hidden;
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .hero-bg-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(15,18,22,0.94) 0%, rgba(15,18,22,0.75) 50%, rgba(15,18,22,0.92) 100%),
+      background: linear-gradient(135deg, rgba(11, 15, 25, 0.96) 0%, rgba(11, 15, 25, 0.82) 50%, rgba(11, 15, 25, 0.96) 100%),
                   url('https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
       z-index: 1;
-      opacity: 0.35;
+      opacity: 0.38;
     }
 
     .hero-content {
@@ -721,7 +614,7 @@
     }
 
     .hero-title {
-      font-size: 2.25rem;
+      font-size: 2.35rem;
       font-weight: 800;
       letter-spacing: -0.03em;
       color: #ffffff;
@@ -731,20 +624,19 @@
 
     @media (min-width: 640px) {
       .hero-title {
-        font-size: 3rem;
+        font-size: 3.1rem;
       }
     }
 
     @media (min-width: 1200px) {
       .hero-title {
-        font-size: 3.5rem;
+        font-size: 3.6rem;
       }
     }
 
     .hero-lead {
       font-size: 1.1rem;
       color: #cbd5e1;
-      line-height: 1.6;
       margin-bottom: 2rem;
       max-width: 580px;
     }
@@ -766,38 +658,35 @@
     }
 
     .hero-feature-item i {
-      color: var(--color-amber-accent);
+      color: var(--accent-amber);
     }
 
-    /* Booking Card Widget */
+    /* Booking Widget Card */
     .booking-widget-card {
-      background-color: #ffffff;
+      background-color: var(--bg-surface);
       border-radius: var(--radius-xl);
       padding: 1.75rem;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      color: var(--color-text-main);
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--border-subtle);
     }
 
     .widget-header {
       margin-bottom: 1.25rem;
       padding-bottom: 1rem;
-      border-bottom: 1px solid var(--color-border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .widget-header h3 {
       font-size: 1.25rem;
       font-weight: 700;
-      color: var(--color-charcoal-dark);
     }
 
     .widget-header p {
       font-size: 0.85rem;
-      color: var(--color-text-muted);
-      margin-top: 0.2rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
     }
 
-    /* Form controls */
     .form-group {
       margin-bottom: 1rem;
     }
@@ -818,7 +707,7 @@
       display: block;
       font-size: 0.8125rem;
       font-weight: 600;
-      color: var(--color-charcoal-dark);
+      color: #cbd5e1;
       margin-bottom: 0.35rem;
     }
 
@@ -831,55 +720,62 @@
     .input-icon {
       position: absolute;
       left: 0.95rem;
-      color: #94a3b8;
+      color: var(--text-dim);
       font-size: 0.9rem;
       pointer-events: none;
     }
 
     .form-control {
       width: 100%;
-      padding: 0.7rem 0.9rem 0.7rem 2.4rem;
+      padding: 0.72rem 0.9rem 0.72rem 2.45rem;
       font-size: 0.9rem;
-      background-color: var(--color-bg-light);
-      border: 1px solid var(--color-border-subtle);
+      background-color: var(--bg-input);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      color: var(--color-text-main);
-      transition: var(--transition-standard);
+      color: #ffffff;
+      transition: var(--transition-fast);
     }
 
     .form-control.no-icon {
-      padding-left: 0.9rem;
+      padding-left: 0.95rem;
     }
 
     .form-control:focus {
       outline: none;
-      background-color: #ffffff;
-      border-color: var(--color-amber-primary);
-      box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+      border-color: var(--accent-amber);
+      box-shadow: 0 0 0 3px var(--accent-amber-glow);
     }
 
     .form-note {
       font-size: 0.75rem;
-      color: var(--color-text-muted);
+      color: var(--text-dim);
       margin-top: 0.75rem;
       line-height: 1.4;
       text-align: center;
     }
 
     .form-error {
-      color: #dc2626;
+      color: #f87171;
       font-size: 0.75rem;
       margin-top: 0.25rem;
       display: none;
     }
-
     .form-error.visible {
       display: block;
     }
 
     /* ==========================================================================
-       6. VEHICLE / FLEET CARDS
+       5. FLEET & SERVICE CARDS
        ========================================================================== */
+    .section-py {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+
+    .bg-elevated {
+      background-color: var(--bg-surface);
+    }
+
     .fleet-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -899,26 +795,26 @@
     }
 
     .fleet-card {
-      background-color: var(--color-bg-white);
-      border: 1px solid var(--color-border-subtle);
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-xl);
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      transition: transform 0.25s, box-shadow 0.25s;
+      transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
     }
 
     .fleet-card:hover {
       transform: translateY(-4px);
-      box-shadow: var(--shadow-lg);
-      border-color: #cbd5e1;
+      box-shadow: var(--shadow-card);
+      border-color: var(--accent-amber);
     }
 
     .fleet-card-img-wrap {
       position: relative;
-      height: 200px;
+      height: 190px;
       overflow: hidden;
-      background-color: #f1f5f9;
+      background-color: var(--bg-input);
     }
 
     .fleet-card-img-wrap img {
@@ -929,20 +825,21 @@
     }
 
     .fleet-card:hover .fleet-card-img-wrap img {
-      transform: scale(1.05);
+      transform: scale(1.06);
     }
 
     .fleet-badge {
       position: absolute;
       top: 12px;
       right: 12px;
-      background-color: rgba(15, 18, 22, 0.85);
+      background-color: rgba(11, 15, 25, 0.85);
       backdrop-filter: blur(4px);
       color: #ffffff;
       font-size: 0.75rem;
       font-weight: 600;
       padding: 0.25rem 0.65rem;
       border-radius: var(--radius-sm);
+      border: 1px solid var(--border-subtle);
     }
 
     .fleet-card-body {
@@ -960,7 +857,7 @@
 
     .fleet-card-subtitle {
       font-size: 0.825rem;
-      color: var(--color-text-muted);
+      color: var(--text-dim);
       margin-bottom: 1rem;
     }
 
@@ -969,11 +866,11 @@
       align-items: center;
       gap: 1.25rem;
       padding: 0.75rem 0;
-      border-top: 1px solid var(--color-border-subtle);
-      border-bottom: 1px solid var(--color-border-subtle);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
       margin-bottom: 1rem;
       font-size: 0.85rem;
-      color: var(--color-text-muted);
+      color: var(--text-muted);
     }
 
     .spec-item {
@@ -983,14 +880,13 @@
     }
 
     .spec-item i {
-      color: var(--color-amber-primary);
+      color: var(--accent-amber);
     }
 
     .fleet-trip-types {
-      font-size: 0.825rem;
-      color: var(--color-text-muted);
+      font-size: 0.85rem;
+      color: var(--text-muted);
       margin-bottom: 1.25rem;
-      line-height: 1.4;
       flex-grow: 1;
     }
 
@@ -1000,9 +896,7 @@
       gap: 0.65rem;
     }
 
-    /* ==========================================================================
-       7. SERVICE CARDS & POPULAR ROUTES
-       ========================================================================== */
+    /* Services Grid */
     .services-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -1022,32 +916,33 @@
     }
 
     .service-card {
-      background-color: var(--color-bg-white);
-      border: 1px solid var(--color-border-subtle);
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-xl);
       padding: 2rem;
       display: flex;
       flex-direction: column;
-      transition: var(--transition-standard);
+      transition: var(--transition-fast);
     }
 
     .service-card:hover {
-      border-color: var(--color-amber-accent);
-      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-amber);
       transform: translateY(-3px);
+      box-shadow: var(--shadow-card);
     }
 
     .service-icon-box {
       width: 52px;
       height: 52px;
       border-radius: var(--radius-lg);
-      background-color: var(--color-amber-light);
-      color: var(--color-amber-primary);
+      background-color: rgba(245, 158, 11, 0.12);
+      color: var(--accent-amber);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.35rem;
       margin-bottom: 1.25rem;
+      border: 1px solid rgba(245, 158, 11, 0.2);
     }
 
     .service-card h3 {
@@ -1057,7 +952,6 @@
 
     .service-card p {
       font-size: 0.925rem;
-      line-height: 1.6;
       margin-bottom: 1.5rem;
       flex-grow: 1;
     }
@@ -1069,8 +963,7 @@
       gap: 0.4rem;
       margin-bottom: 1.5rem;
       font-size: 0.85rem;
-      color: var(--color-charcoal-dark);
-      font-weight: 500;
+      color: #cbd5e1;
     }
 
     .service-meta-list li {
@@ -1080,7 +973,7 @@
     }
 
     .service-meta-list li i {
-      color: var(--color-amber-primary);
+      color: var(--accent-amber);
       font-size: 0.8rem;
     }
 
@@ -1104,19 +997,18 @@
     }
 
     .route-card {
-      background-color: var(--color-bg-white);
-      border: 1px solid var(--color-border-subtle);
+      background-color: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
       border-radius: var(--radius-xl);
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: var(--transition-standard);
+      transition: var(--transition-fast);
     }
 
     .route-card:hover {
-      border-color: #cbd5e1;
-      box-shadow: var(--shadow-md);
+      border-color: var(--accent-amber);
       transform: translateY(-2px);
     }
 
@@ -1133,12 +1025,12 @@
       gap: 0.75rem;
       font-size: 1.1rem;
       font-weight: 700;
-      color: var(--color-charcoal-dark);
+      color: #ffffff;
       margin-bottom: 0.75rem;
     }
 
     .route-path i {
-      color: var(--color-amber-primary);
+      color: var(--accent-amber);
       font-size: 0.9rem;
     }
 
@@ -1147,40 +1039,15 @@
       flex-direction: column;
       gap: 0.35rem;
       font-size: 0.85rem;
-      color: var(--color-text-muted);
+      color: var(--text-muted);
       margin-bottom: 1.25rem;
     }
 
-    /* ==========================================================================
-       8. PAGE LAYOUTS & UTILITIES
-       ========================================================================== */
-    .section-py {
-      padding-top: 5rem;
-      padding-bottom: 5rem;
-    }
-
-    .bg-white {
-      background-color: #ffffff;
-    }
-
-    .bg-dark {
-      background-color: var(--color-charcoal-dark);
-      color: #ffffff;
-    }
-
-    .bg-dark h1, .bg-dark h2, .bg-dark h3 {
-      color: #ffffff;
-    }
-
-    .bg-dark p {
-      color: #cbd5e1;
-    }
-
+    /* Page details layout */
     .page-hero {
-      background-color: var(--color-charcoal-dark);
-      color: #ffffff;
+      background-color: var(--bg-surface);
       padding: 4rem 0 3.5rem;
-      border-bottom: 1px solid var(--color-charcoal-border);
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .breadcrumb {
@@ -1188,12 +1055,12 @@
       align-items: center;
       gap: 0.5rem;
       font-size: 0.825rem;
-      color: #94a3b8;
+      color: var(--text-muted);
       margin-bottom: 0.75rem;
     }
 
     .breadcrumb a:hover {
-      color: var(--color-amber-accent);
+      color: var(--accent-amber);
     }
 
     .detail-gallery {
@@ -1225,60 +1092,117 @@
       border-radius: var(--radius-lg);
     }
 
-    /* Contact & Form Cards */
-    .contact-card-box {
-      background-color: #ffffff;
+    .content-box {
+      background-color: var(--bg-surface);
       border-radius: var(--radius-xl);
-      border: 1px solid var(--color-border-subtle);
+      border: 1px solid var(--border-subtle);
       padding: 2.25rem;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-card);
     }
 
-    /* Route search filter bar */
     .filter-bar {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
       margin-bottom: 2.5rem;
-      background-color: #ffffff;
+      background-color: var(--bg-surface);
       padding: 1rem;
       border-radius: var(--radius-lg);
-      border: 1px solid var(--color-border-subtle);
+      border: 1px solid var(--border-subtle);
     }
 
-    .filter-input {
-      flex: 1;
-      min-width: 220px;
-      padding: 0.65rem 1rem;
-      border: 1px solid var(--color-border-subtle);
-      border-radius: var(--radius-md);
-      font-size: 0.9rem;
-    }
-
-    /* Notice banner */
     .notice-box {
-      background-color: #eff6ff;
-      border: 1px solid #bfdbfe;
+      background-color: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.25);
       border-radius: var(--radius-md);
       padding: 0.85rem 1.15rem;
       display: flex;
       align-items: flex-start;
       gap: 0.75rem;
       font-size: 0.85rem;
-      color: #1e40af;
+      color: #fde68a;
       margin-top: 1.25rem;
     }
 
-    .notice-box i {
-      font-size: 1rem;
-      margin-top: 0.1rem;
+    /* ==========================================================================
+       6. FOOTER
+       ========================================================================== */
+    .site-footer {
+      background-color: var(--bg-surface);
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 4rem;
+      padding-bottom: 2rem;
+      margin-top: auto;
     }
 
-    /* Accessibility reduced motion */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    @media (min-width: 640px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      }
+    }
+
+    .footer-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #ffffff;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .footer-links a {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-amber);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+
+    @media (min-width: 768px) {
+      .footer-bottom {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
       }
@@ -1294,8 +1218,8 @@
     <div class="container">
       <div class="header-inner">
         <!-- Logo -->
-        <a href="/" class="brand-logo" data-route="/">
-          <div class="logo-icon">
+        <a href="#/" class="brand-logo" data-route="/">
+          <div class="logo-badge">
             <i class="fa-solid fa-car-side"></i>
           </div>
           <span>Aura<span class="accent">Cab</span></span>
@@ -1303,28 +1227,28 @@
 
         <!-- Desktop Navigation -->
         <nav class="nav-desktop" aria-label="Main Navigation">
-          <a href="/" class="nav-link" data-route="/">Home</a>
-          <a href="/about" class="nav-link" data-route="/about">About Us</a>
-          
+          <a href="#/" class="nav-link" data-route="/">Home</a>
+          <a href="#/about" class="nav-link" data-route="/about">About Us</a>
+
           <!-- Fleet Dropdown -->
           <div class="nav-dropdown-wrapper">
-            <a href="/fleet" class="nav-link" data-route="/fleet">
+            <a href="#/fleet" class="nav-link" data-route="/fleet">
               Our Fleet <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i>
             </a>
             <div class="dropdown-menu">
-              <a href="/fleet" class="dropdown-item" data-route="/fleet">
-                <i class="fa-solid fa-list"></i> All Vehicles
+              <a href="#/fleet" class="dropdown-item" data-route="/fleet">
+                <i class="fa-solid fa-list"></i> All Fleet
               </a>
-              <a href="/fleet/hatchback" class="dropdown-item" data-route="/fleet/hatchback">
+              <a href="#/fleet/hatchback" class="dropdown-item" data-route="/fleet/hatchback">
                 <i class="fa-solid fa-car"></i> Hatchback
               </a>
-              <a href="/fleet/sedan" class="dropdown-item" data-route="/fleet/sedan">
+              <a href="#/fleet/sedan" class="dropdown-item" data-route="/fleet/sedan">
                 <i class="fa-solid fa-car-side"></i> Premium Sedan
               </a>
-              <a href="/fleet/suv" class="dropdown-item" data-route="/fleet/suv">
+              <a href="#/fleet/suv" class="dropdown-item" data-route="/fleet/suv">
                 <i class="fa-solid fa-truck-monster"></i> Executive SUV
               </a>
-              <a href="/fleet/tempo-traveller" class="dropdown-item" data-route="/fleet/tempo-traveller">
+              <a href="#/fleet/tempo-traveller" class="dropdown-item" data-route="/fleet/tempo-traveller">
                 <i class="fa-solid fa-van-shuttle"></i> Tempo Traveller
               </a>
             </div>
@@ -1332,41 +1256,41 @@
 
           <!-- Services Dropdown -->
           <div class="nav-dropdown-wrapper">
-            <a href="/services" class="nav-link" data-route="/services">
+            <a href="#/services" class="nav-link" data-route="/services">
               Services <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i>
             </a>
             <div class="dropdown-menu">
-              <a href="/services" class="dropdown-item" data-route="/services">
+              <a href="#/services" class="dropdown-item" data-route="/services">
                 <i class="fa-solid fa-list-check"></i> All Services
               </a>
-              <a href="/services/local-taxi" class="dropdown-item" data-route="/services/local-taxi">
+              <a href="#/services/local-taxi" class="dropdown-item" data-route="/services/local-taxi">
                 <i class="fa-solid fa-city"></i> Local Taxi
               </a>
-              <a href="/services/outstation" class="dropdown-item" data-route="/services/outstation">
+              <a href="#/services/outstation" class="dropdown-item" data-route="/services/outstation">
                 <i class="fa-solid fa-road"></i> Outstation Journeys
               </a>
-              <a href="/services/airport-transfer" class="dropdown-item" data-route="/services/airport-transfer">
+              <a href="#/services/airport-transfer" class="dropdown-item" data-route="/services/airport-transfer">
                 <i class="fa-solid fa-plane-departure"></i> Airport Transfers
               </a>
-              <a href="/services/one-way-taxi" class="dropdown-item" data-route="/services/one-way-taxi">
-                <i class="fa-solid fa-arrow-right"></i> One-Way Cab
+              <a href="#/services/one-way-taxi" class="dropdown-item" data-route="/services/one-way-taxi">
+                <i class="fa-solid fa-arrow-right"></i> One-Way Drop
               </a>
-              <a href="/services/round-trip" class="dropdown-item" data-route="/services/round-trip">
+              <a href="#/services/round-trip" class="dropdown-item" data-route="/services/round-trip">
                 <i class="fa-solid fa-arrows-rotate"></i> Round Trips
               </a>
             </div>
           </div>
 
-          <a href="/routes" class="nav-link" data-route="/routes">Popular Routes</a>
-          <a href="/contact" class="nav-link" data-route="/contact">Contact</a>
+          <a href="#/routes" class="nav-link" data-route="/routes">Routes</a>
+          <a href="#/contact" class="nav-link" data-route="/contact">Contact</a>
         </nav>
 
-        <!-- Header Actions -->
+        <!-- Header CTA Actions -->
         <div class="header-actions">
-          <a href="/book" class="btn btn-primary btn-sm" data-route="/book">
+          <a href="#/book" class="btn btn-amber btn-sm" data-route="/book">
             <i class="fa-solid fa-calendar-check"></i> Book a Taxi
           </a>
-          <button class="menu-toggle-btn" id="mobileMenuToggle" aria-label="Open navigation menu">
+          <button class="menu-toggle-btn" id="mobileMenuToggle" aria-label="Open navigation drawer">
             <i class="fa-solid fa-bars"></i>
           </button>
         </div>
@@ -1376,23 +1300,23 @@
 
   <!-- Mobile Drawer Backdrop & Menu -->
   <div class="mobile-drawer-backdrop" id="mobileBackdrop"></div>
-  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Navigation drawer">
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Navigation Drawer">
     <div class="drawer-header">
       <div class="brand-logo">
-        <div class="logo-icon">
+        <div class="logo-badge">
           <i class="fa-solid fa-car-side"></i>
         </div>
         <span>Aura<span class="accent">Cab</span></span>
       </div>
-      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close navigation menu">
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close navigation">
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
 
     <div class="mobile-nav-list">
-      <a href="/" class="mobile-nav-link" data-route="/">Home</a>
-      <a href="/about" class="mobile-nav-link" data-route="/about">About Us</a>
-      
+      <a href="#/" class="mobile-nav-link" data-route="/">Home</a>
+      <a href="#/about" class="mobile-nav-link" data-route="/about">About Us</a>
+
       <!-- Fleet Mobile Accordion -->
       <div>
         <div class="mobile-nav-link" id="mobileFleetAccordionToggle">
@@ -1400,11 +1324,11 @@
           <i class="fa-solid fa-chevron-down" id="fleetArrow" style="font-size: 0.8rem;"></i>
         </div>
         <div class="mobile-submenu" id="mobileFleetSubmenu">
-          <a href="/fleet" class="mobile-sub-link" data-route="/fleet">All Fleet Directory</a>
-          <a href="/fleet/hatchback" class="mobile-sub-link" data-route="/fleet/hatchback">Hatchback (4 Seater)</a>
-          <a href="/fleet/sedan" class="mobile-sub-link" data-route="/fleet/sedan">Sedan (4 Seater)</a>
-          <a href="/fleet/suv" class="mobile-sub-link" data-route="/fleet/suv">Executive SUV (6-7 Seater)</a>
-          <a href="/fleet/tempo-traveller" class="mobile-sub-link" data-route="/fleet/tempo-traveller">Tempo Traveller (12+ Seater)</a>
+          <a href="#/fleet" class="mobile-sub-link" data-route="/fleet">Full Fleet Directory</a>
+          <a href="#/fleet/hatchback" class="mobile-sub-link" data-route="/fleet/hatchback">Hatchback (4 Seater)</a>
+          <a href="#/fleet/sedan" class="mobile-sub-link" data-route="/fleet/sedan">Sedan (4 Seater)</a>
+          <a href="#/fleet/suv" class="mobile-sub-link" data-route="/fleet/suv">Executive SUV (6-7 Seater)</a>
+          <a href="#/fleet/tempo-traveller" class="mobile-sub-link" data-route="/fleet/tempo-traveller">Tempo Traveller (12+ Seater)</a>
         </div>
       </div>
 
@@ -1415,41 +1339,41 @@
           <i class="fa-solid fa-chevron-down" id="servicesArrow" style="font-size: 0.8rem;"></i>
         </div>
         <div class="mobile-submenu" id="mobileServicesSubmenu">
-          <a href="/services" class="mobile-sub-link" data-route="/services">All Services</a>
-          <a href="/services/local-taxi" class="mobile-sub-link" data-route="/services/local-taxi">Local Taxi</a>
-          <a href="/services/outstation" class="mobile-sub-link" data-route="/services/outstation">Outstation Journeys</a>
-          <a href="/services/airport-transfer" class="mobile-sub-link" data-route="/services/airport-transfer">Airport Transfers</a>
-          <a href="/services/one-way-taxi" class="mobile-sub-link" data-route="/services/one-way-taxi">One-Way Cab</a>
-          <a href="/services/round-trip" class="mobile-sub-link" data-route="/services/round-trip">Round Trips</a>
+          <a href="#/services" class="mobile-sub-link" data-route="/services">All Services</a>
+          <a href="#/services/local-taxi" class="mobile-sub-link" data-route="/services/local-taxi">Local Taxi</a>
+          <a href="#/services/outstation" class="mobile-sub-link" data-route="/services/outstation">Outstation Journeys</a>
+          <a href="#/services/airport-transfer" class="mobile-sub-link" data-route="/services/airport-transfer">Airport Transfers</a>
+          <a href="#/services/one-way-taxi" class="mobile-sub-link" data-route="/services/one-way-taxi">One-Way Cab</a>
+          <a href="#/services/round-trip" class="mobile-sub-link" data-route="/services/round-trip">Round Trips</a>
         </div>
       </div>
 
-      <a href="/routes" class="mobile-nav-link" data-route="/routes">Popular Routes</a>
-      <a href="/contact" class="mobile-nav-link" data-route="/contact">Contact</a>
-      <a href="/book" class="mobile-nav-link" data-route="/book" style="color: var(--color-amber-accent); font-weight: 700;">
+      <a href="#/routes" class="mobile-nav-link" data-route="/routes">Popular Routes</a>
+      <a href="#/contact" class="mobile-nav-link" data-route="/contact">Contact</a>
+      <a href="#/book" class="mobile-nav-link" data-route="/book" style="color: var(--accent-amber); font-weight: 700;">
         <i class="fa-solid fa-calendar-check" style="margin-right: 0.5rem;"></i> Book a Taxi
       </a>
     </div>
 
-    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--color-charcoal-border);">
-      <p style="font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.75rem;">Direct Dispatch Enquiry:</p>
-      <a href="tel:+919876543210" class="btn btn-outline-white btn-sm btn-full" style="margin-bottom: 0.5rem;">
+    <div style="margin-top: auto; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle);">
+      <p style="font-size: 0.8rem; color: var(--text-dim); margin-bottom: 0.75rem;">Direct Dispatch Desk:</p>
+      <a href="tel:+919876543210" class="btn btn-outline btn-sm btn-full">
         <i class="fa-solid fa-phone"></i> +91 98765 43210
       </a>
     </div>
   </div>
 
   <!-- ==========================================================================
-       MAIN DYNAMIC ROUTE CONTAINER
+       MAIN DYNAMIC CONTAINER
        ========================================================================== -->
-  <main id="appContent" role="main" tabindex="-1">
-    <!-- View content is injected here by router -->
+  <main id="app-root" role="main" tabindex="-1">
+    <!-- Views rendered dynamically here -->
   </main>
 
   <!-- ==========================================================================
        FLOATING WHATSAPP BUTTON (Every Page)
        ========================================================================== -->
-  <a href="#" id="floatingWhatsappBtn" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with operator on WhatsApp">
+  <a href="#" id="floatingWhatsappBtn" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Direct WhatsApp Booking">
     <i class="fa-brands fa-whatsapp"></i>
     <span class="whatsapp-tooltip">Chat with Taxi Desk</span>
   </a>
@@ -1460,67 +1384,65 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-        <!-- Col 1: Brand Info -->
+        <!-- Col 1 -->
         <div>
           <div class="brand-logo" style="margin-bottom: 1rem;">
-            <div class="logo-icon">
+            <div class="logo-badge">
               <i class="fa-solid fa-car-side"></i>
             </div>
             <span>Aura<span class="accent">Cab</span></span>
           </div>
-          <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">
-            Professional passenger transportation company providing reliable city rides, airport transfers, and verified outstation intercity journeys with transparent pricing.
+          <p style="font-size: 0.9rem; margin-bottom: 1.5rem;">
+            Established passenger transit and chauffeur network. Committed to reliable departures, upfront verified fares, and courteous drivers for local and highway travel.
           </p>
-          <div style="display: flex; gap: 0.75rem;">
-            <a href="#" class="btn btn-whatsapp btn-sm" id="footerWhatsappBtn" target="_blank" rel="noopener noreferrer">
-              <i class="fa-brands fa-whatsapp"></i> WhatsApp Booking
-            </a>
-          </div>
+          <a href="#" class="btn btn-whatsapp btn-sm" id="footerWhatsappBtn" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Dispatch
+          </a>
         </div>
 
-        <!-- Col 2: Fleet -->
+        <!-- Col 2 -->
         <div>
           <h4 class="footer-title">Our Fleet</h4>
           <ul class="footer-links">
-            <li><a href="/fleet" data-route="/fleet">Full Directory</a></li>
-            <li><a href="/fleet/hatchback" data-route="/fleet/hatchback">Hatchback (4 Seater)</a></li>
-            <li><a href="/fleet/sedan" data-route="/fleet/sedan">Sedan (Dzire / Etios)</a></li>
-            <li><a href="/fleet/suv" data-route="/fleet/suv">SUV (Ertiga / Innova)</a></li>
-            <li><a href="/fleet/tempo-traveller" data-route="/fleet/tempo-traveller">Tempo Traveller (12-17)</a></li>
+            <li><a href="#/fleet" data-route="/fleet">All Vehicles</a></li>
+            <li><a href="#/fleet/hatchback" data-route="/fleet/hatchback">Compact Hatchback (4)</a></li>
+            <li><a href="#/fleet/sedan" data-route="/fleet/sedan">Comfort Sedan (4)</a></li>
+            <li><a href="#/fleet/suv" data-route="/fleet/suv">Executive SUV (6-7)</a></li>
+            <li><a href="#/fleet/tempo-traveller" data-route="/fleet/tempo-traveller">Tempo Traveller (12+)</a></li>
           </ul>
         </div>
 
-        <!-- Col 3: Services -->
+        <!-- Col 3 -->
         <div>
           <h4 class="footer-title">Services</h4>
           <ul class="footer-links">
-            <li><a href="/services/local-taxi" data-route="/services/local-taxi">Local Taxi Rentals</a></li>
-            <li><a href="/services/airport-transfer" data-route="/services/airport-transfer">Airport Pickup & Drop</a></li>
-            <li><a href="/services/outstation" data-route="/services/outstation">Outstation Round Trips</a></li>
-            <li><a href="/services/one-way-taxi" data-route="/services/one-way-taxi">One-Way Drops</a></li>
-            <li><a href="/routes" data-route="/routes">Popular Intercity Routes</a></li>
+            <li><a href="#/services/local-taxi" data-route="/services/local-taxi">Local Taxi Rentals</a></li>
+            <li><a href="#/services/airport-transfer" data-route="/services/airport-transfer">Airport Transfers</a></li>
+            <li><a href="#/services/outstation" data-route="/services/outstation">Outstation Travel</a></li>
+            <li><a href="#/services/one-way-taxi" data-route="/services/one-way-taxi">One-Way Drops</a></li>
+            <li><a href="#/routes" data-route="/routes">Popular Routes</a></li>
           </ul>
         </div>
 
-        <!-- Col 4: Dispatch Details -->
+        <!-- Col 4 -->
         <div>
           <h4 class="footer-title">Booking Desk</h4>
           <ul class="footer-links" style="gap: 0.85rem;">
             <li style="display: flex; gap: 0.5rem; align-items: flex-start;">
-              <i class="fa-solid fa-location-dot" style="color: var(--color-amber-accent); margin-top: 0.25rem;"></i>
+              <i class="fa-solid fa-location-dot" style="color: var(--accent-amber); margin-top: 0.25rem;"></i>
               <span>Terminal Road, Transport Hub, City Centre</span>
             </li>
             <li style="display: flex; gap: 0.5rem; align-items: center;">
-              <i class="fa-solid fa-phone" style="color: var(--color-amber-accent);"></i>
+              <i class="fa-solid fa-phone" style="color: var(--accent-amber);"></i>
               <a href="tel:+919876543210">+91 98765 43210</a>
             </li>
             <li style="display: flex; gap: 0.5rem; align-items: center;">
-              <i class="fa-solid fa-envelope" style="color: var(--color-amber-accent);"></i>
+              <i class="fa-solid fa-envelope" style="color: var(--accent-amber);"></i>
               <a href="mailto:dispatch@auracab.com">dispatch@auracab.com</a>
             </li>
             <li style="display: flex; gap: 0.5rem; align-items: center;">
-              <i class="fa-solid fa-clock" style="color: var(--color-amber-accent);"></i>
-              <span>Operational: 06:00 AM – 11:00 PM</span>
+              <i class="fa-solid fa-clock" style="color: var(--accent-amber);"></i>
+              <span>Hours: 06:00 AM – 11:00 PM</span>
             </li>
           </ul>
         </div>
@@ -1531,204 +1453,154 @@
           &copy; <span id="currentYear"></span> AuraCab Mobility Services. All rights reserved.
         </div>
         <div style="display: flex; gap: 1.5rem;">
-          <a href="/about" data-route="/about">About Us</a>
-          <a href="/contact" data-route="/contact">Contact Support</a>
-          <a href="/book" data-route="/book">Enquire Ride</a>
+          <a href="#/about" data-route="/about">About Us</a>
+          <a href="#/contact" data-route="/contact">Contact Support</a>
+          <a href="#/book" data-route="/book">Book Ride</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- ==========================================================================
-       JAVASCRIPT ARCHITECTURE
+       JAVASCRIPT: PURE HASH ROUTER & APP CORE
        ========================================================================== -->
   <script>
-    /**
-     * CONFIGURATION OBJECT
-     * Note: Replace WHATSAPP_NUMBER with the company's verified operational WhatsApp number.
-     */
+    /* 1. Global Configurations */
+    window.COMPANY_WHATSAPP = '919876543210';
     const CONFIG = {
       COMPANY_NAME: 'AuraCab',
-      WHATSAPP_NUMBER: '919876543210', // Format: CountryCode + Number (no spaces or plus)
+      WHATSAPP_NUMBER: window.COMPANY_WHATSAPP,
       DEFAULT_PHONE: '+91 98765 43210',
       CONTACT_EMAIL: 'dispatch@auracab.com',
       OFFICE_LOCATION: 'Terminal Road, Transport Hub, City Centre'
     };
 
-    /**
-     * CENTRALIZED WHATSAPP URL GENERATOR
-     */
-    function getWhatsAppUrl(customMessage) {
-      const text = encodeURIComponent(customMessage.trim());
-      return `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${text}`;
+    function getWhatsAppUrl(textMessage) {
+      return `https://wa.me/${CONFIG.WHATSAPP_NUMBER}?text=${encodeURIComponent(textMessage.trim())}`;
     }
 
-    /**
-     * DATA DEFINITIONS: FLEET
-     */
+    /* 2. Static Verified Dataset */
     const FLEET_DATA = [
       {
         slug: 'hatchback',
         name: 'Compact Hatchback',
-        exampleModels: 'WagonR, Swift or similar',
+        models: 'WagonR, Swift or similar',
         passengers: 4,
         luggage: '2 Small Bags',
         idealFor: 'Everyday city transit, fast errands, and short individual commutes.',
         imageMain: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
         imageDetail1: 'https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=80',
         imageDetail2: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=800&q=80',
-        features: [
-          'Budget-friendly fuel economy',
-          'Easy maneuverability in city traffic',
-          'Accommodates up to 4 passengers'
-        ],
-        description: 'Our hatchback category provides a practical, economical solution for local errands, airport drops for single travellers, and daily urban commuting.'
+        features: ['Economical fuel rates', 'Easy city parking and maneuvering', 'Comfortable seating for up to 4'],
+        description: 'Our hatchback class delivers an economical, swift option for city commuting, solo airport drops, and everyday appointments.'
       },
       {
         slug: 'sedan',
         name: 'Comfort Sedan',
-        exampleModels: 'Dzire, Etios, Aura or similar',
+        models: 'Dzire, Etios, Aura or similar',
         passengers: 4,
         luggage: '2 Large + 1 Small Bag',
-        idealFor: 'Executive city travel, comfortable airport transfers, and one-way intercity trips.',
+        idealFor: 'Executive city travel, airport transfers, and one-way intercity trips.',
         imageMain: 'https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=800&q=80',
         imageDetail1: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80',
         imageDetail2: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
-        features: [
-          'Separate dedicated boot luggage space',
-          'Comfortable rear legroom for family trips',
-          'Smooth suspension for highway journeys'
-        ],
-        description: 'The preferred choice for business travelers and small families. Enjoy relaxed rear-seat space, ample luggage capacity in the trunk, and a stable highway ride.'
+        features: ['Dedicated boot luggage trunk', 'Spacious rear legroom for families', 'Smooth highway suspension'],
+        description: 'The executive favorite for corporate travelers and small families. Enjoy relaxed rear-seat space, quiet cabin travel, and ample trunk space.'
       },
       {
         slug: 'suv',
         name: 'Executive SUV',
-        exampleModels: 'Ertiga, Innova Crysta or similar',
+        models: 'Ertiga, Innova Crysta or similar',
         passengers: 6,
         luggage: '3 to 4 Bags',
-        idealFor: 'Outstation family holidays, weekend road trips, and group airport transfers.',
+        idealFor: 'Outstation family holidays, weekend road trips, and airport transfers with luggage.',
         imageMain: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
         imageDetail1: 'https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=800&q=80',
         imageDetail2: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80',
-        features: [
-          'Expansive seating with 3 rows',
-          'High ground clearance for diverse roads',
-          'Strong luggage rack or flexible rear folded space'
-        ],
-        description: 'Engineered for distance and passenger ease. Our 6-7 seater SUVs deliver robust reliability for outstation mountain roads, highway touring, and multi-luggage airport pickups.'
+        features: ['Spacious 3-row seating', 'High ground clearance for hill roads', 'Flexible rear folding storage'],
+        description: 'Built for distance and passenger ease. Our 6-7 seater SUVs deliver robust reliability for hill climbs, long itineraries, and airport runs.'
       },
       {
         slug: 'tempo-traveller',
         name: 'Tempo Traveller',
-        exampleModels: '12 to 17 Seater Van',
+        models: '12 to 17 Seater Van',
         passengers: 12,
         luggage: '8 to 10 Bags',
-        idealFor: 'Wedding guest transit, corporate team retreats, and extended pilgrim tours.',
+        idealFor: 'Family weddings, pilgrimage groups, and corporate team excursions.',
         imageMain: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
         imageDetail1: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80',
         imageDetail2: 'https://images.unsplash.com/photo-1559297434-fae8a1916a79?auto=format&fit=crop&w=800&q=80',
-        features: [
-          'Generous aisle room and high ceiling',
-          'Designated rear luggage boot',
-          'Comfortable bench seating configuration'
-        ],
-        description: 'The optimal choice for large travel contingents. Eliminates the hassle of coordinating multiple small cars by accommodating everyone together.'
+        features: ['Spacious central walking aisle', 'High roof with ample overhead space', 'Generous rear boot luggage section'],
+        description: 'The definitive solution for large traveling contingents. Eliminates convoy complications by carrying everyone together comfortably.'
       }
     ];
 
-    /**
-     * DATA DEFINITIONS: SERVICES
-     */
     const SERVICES_DATA = [
       {
         slug: 'local-taxi',
         title: 'Local Taxi Services',
         icon: 'fa-city',
-        summary: 'Flexible hourly or point-to-point urban transit for errands, meetings, and city visits.',
-        highlights: [
-          'Point-to-point city drops',
-          'Flexible hourly hire options',
-          'Verified urban routes'
-        ],
-        fullText: 'Move across the city without parking hassles or public transit crowds. Whether you have multiple back-to-back client meetings, family visits, or shopping trips, our local taxi service provides comfortable vehicles on your schedule.'
+        summary: 'Flexible hourly or point-to-point urban transit for meetings, shopping, and visits.',
+        highlights: ['Point-to-point city drops', 'Flexible 4hr/8hr packages', 'Transparent route billing'],
+        fullText: 'Move across the city without parking hassles or public transit crowding. Whether you have sequential client meetings, family visits, or shopping trips, our local taxi fleet provides prompt cars on your timetable.'
       },
       {
         slug: 'outstation',
-        title: 'Outstation Taxi Services',
+        title: 'Outstation Journeys',
         icon: 'fa-road',
-        summary: 'Dependable round-trip and long-distance intercity travel with experienced highway drivers.',
-        highlights: [
-          'Multi-day highway itineraries',
-          'Custom pickup and drop points',
-          'Verified driver credentials'
-        ],
-        fullText: 'Plan your weekend family holidays, business visits to neighboring hubs, or leisure retreats with our outstation taxi fleet. Our drivers have extensive highway route experience, prioritizing safety and schedule reliability.'
+        summary: 'Dependable round-trip and long-distance travel with experienced highway drivers.',
+        highlights: ['Multi-day highway itineraries', 'Doorstep pickup & drop', 'Experienced highway drivers'],
+        fullText: 'Plan your weekend family getaways, business travel to regional hubs, or holiday retreats. Our drivers specialize in highway navigation, maintaining safety, verified rest intervals, and schedule discipline.'
       },
       {
         slug: 'airport-transfer',
         title: 'Airport Transfers',
         icon: 'fa-plane-departure',
-        summary: 'Punctual airport pickup and drop-off services scheduled precisely around your flight timings.',
-        highlights: [
-          'Scheduled flight arrival pick-up',
-          'Early morning airport departures',
-          'Dedicated trunk space for luggage'
-        ],
-        fullText: 'Never worry about missing a flight or finding a ride after a long flight. Schedule your airport pickup or drop in advance. Your assigned car and driver will be prepared to assist with your bags and provide direct transit.'
+        summary: 'Punctual airport pickup and drop-off services scheduled around your flight times.',
+        highlights: ['Flight arrival coordination', 'Early morning pickups', 'Assistance with baggage'],
+        fullText: 'Never worry about missing a flight departure or waiting in endless taxi queues upon arrival. Schedule your airport cab in advance with confirmed driver dispatch details.'
       },
       {
         slug: 'one-way-taxi',
-        title: 'One-Way Intercity Cab',
+        title: 'One-Way Cab Drop',
         icon: 'fa-arrow-right',
-        summary: 'Pay only for the single journey leg when travelling between key cities without return fares.',
-        highlights: [
-          'Doorstep pickup to destination drop',
-          'No return-trip toll requirements',
-          'Transparent upfront fare enquiry'
-        ],
-        fullText: 'Travelling between cities without plans to return right away? Our one-way taxi option prevents you from paying standard two-way return charges on designated highway sectors.'
+        summary: 'Pay only for single journey drops between key cities without two-way return fares.',
+        highlights: ['Door-to-door transit', 'No return fare charge', 'Upfront toll clarity'],
+        fullText: 'Travelling between cities without needing to return immediately? Our one-way cab option ensures you only pay for the distance travelled, saving significant outstation costs.'
       },
       {
         slug: 'round-trip',
         title: 'Round-Trip Bookings',
         icon: 'fa-arrows-rotate',
-        summary: 'Same vehicle and driver reserved for your onward and return journeys at competitive terms.',
-        highlights: [
-          'Dedicated vehicle throughout your stay',
-          'Flexible return time coordination',
-          'Convenient for medical visits or day meetings'
-        ],
-        fullText: 'Ideal for same-day business visits, pilgrimage tours, or family functions in nearby districts. Keep the same vehicle and driver on standby until your itinerary is finished.'
+        summary: 'Retain the same vehicle and dedicated driver for your return travel.',
+        highlights: ['Same vehicle throughout stay', 'Flexible return time coordination', 'Comfortable itinerary pace'],
+        fullText: 'Perfect for day-long business trips, pilgrimage temple tours, or family events in neighboring cities. Retain your assigned vehicle on standby throughout your itinerary.'
       }
     ];
 
-    /**
-     * DATA DEFINITIONS: POPULAR ROUTES
-     */
     const ROUTES_DATA = [
       {
         from: 'City Centre',
         to: 'International Airport',
         type: 'Airport Transfer',
         vehicles: 'Sedan, SUV',
-        verifiedDuration: 'Approx. 45 - 60 mins',
-        tag: 'Frequent Airport Route'
+        duration: 'Approx. 45 - 60 mins',
+        tag: 'Airport Corridor'
       },
       {
         from: 'City Hub',
         to: 'Highland Hill Station',
         type: 'Outstation / Round Trip',
         vehicles: 'SUV, Sedan',
-        verifiedDuration: 'Approx. 5.5 - 6.5 hours',
-        tag: 'Popular Leisure'
+        duration: 'Approx. 5.5 - 6.5 hours',
+        tag: 'Holiday Route'
       },
       {
         from: 'City Centre',
         to: 'Industrial Business Corridor',
         type: 'One-Way / Local',
         vehicles: 'Hatchback, Sedan',
-        verifiedDuration: 'Approx. 1.5 hours',
+        duration: 'Approx. 1.5 hours',
         tag: 'Business Commute'
       },
       {
@@ -1736,131 +1608,132 @@
         to: 'Pilgrimage Temple Town',
         type: 'Outstation Round Trip',
         vehicles: 'SUV, Tempo Traveller',
-        verifiedDuration: 'Approx. 4 hours',
-        tag: 'Family & Group'
+        duration: 'Approx. 4 hours',
+        tag: 'Pilgrim Circuit'
       },
       {
         from: 'Metro Station',
         to: 'Coastal Beach Resort',
         type: 'Weekend Outstation',
         vehicles: 'Sedan, SUV',
-        verifiedDuration: 'Approx. 3.5 hours',
-        tag: 'Weekend Gateways'
+        duration: 'Approx. 3.5 hours',
+        tag: 'Weekend Getaway'
       },
       {
         from: 'Central Junction',
         to: 'Neighboring State Capital',
-        type: 'One-Way / Intercity',
+        type: 'One-Way Intercity',
         vehicles: 'Sedan, SUV',
-        verifiedDuration: 'Approx. 6 hours',
+        duration: 'Approx. 6 hours',
         tag: 'Intercity Corridor'
       }
     ];
 
-    /**
-     * ROUTER ENGINE (History API + Hash fallback)
-     */
+    /* ==========================================================================
+       3. BULLETPROOF ROUTER ENGINE (GUARANTEES HOME DEFAULT)
+       ========================================================================== */
     const router = {
-      routes: {},
-      
+      // Valid explicit paths dictionary
+      routes: {
+        '/': renderHomePage,
+        '/about': renderAboutPage,
+        '/fleet': renderFleetDirectoryPage,
+        '/fleet/hatchback': () => renderFleetDetailPage('hatchback'),
+        '/fleet/sedan': () => renderFleetDetailPage('sedan'),
+        '/fleet/suv': () => renderFleetDetailPage('suv'),
+        '/fleet/tempo-traveller': () => renderFleetDetailPage('tempo-traveller'),
+        '/services': renderServicesDirectoryPage,
+        '/services/local-taxi': () => renderServiceDetailPage('local-taxi'),
+        '/services/outstation': () => renderServiceDetailPage('outstation'),
+        '/services/airport-transfer': () => renderServiceDetailPage('airport-transfer'),
+        '/services/one-way-taxi': () => renderServiceDetailPage('one-way-taxi'),
+        '/services/round-trip': () => renderServiceDetailPage('round-trip'),
+        '/routes': renderRoutesPage,
+        '/book': renderBookingPage,
+        '/contact': renderContactPage
+      },
+
       init() {
-        // Set dynamic copyright year
         const yr = document.getElementById('currentYear');
         if (yr) yr.textContent = new Date().getFullYear();
 
-        // Listen for browser forward/backward actions
-        window.addEventListener('popstate', () => {
-          this.handleRoute();
-        });
+        // Listen to hash change events
+        window.addEventListener('hashchange', () => this.dispatch());
 
-        // Global link interceptor for single-page routing
+        // Intercept clicks on links with data-route
         document.addEventListener('click', (e) => {
-          const target = e.target.closest('a[data-route]');
-          if (target) {
-            const routePath = target.getAttribute('data-route');
-            if (routePath) {
+          const link = e.target.closest('a[data-route]');
+          if (link) {
+            const path = link.getAttribute('data-route');
+            if (path) {
               e.preventDefault();
-              this.navigate(routePath);
+              this.navigate(path);
             }
           }
         });
 
-        // Initial route resolution
-        this.handleRoute();
-      },
-
-      getCurrentPath() {
-        // Check hash first for fallback hosts (#/services/airport-transfer)
-        if (window.location.hash && window.location.hash.startsWith('#/')) {
-          return window.location.hash.slice(1);
-        }
-        return window.location.pathname || '/';
+        // First initial dispatch
+        this.dispatch();
       },
 
       navigate(path) {
-        // Use clean path where possible, with hash update for fallback resilience
-        if (window.history.pushState) {
-          window.history.pushState({}, '', path);
-        } else {
-          window.location.hash = path;
-        }
-        this.handleRoute();
+        let clean = path.startsWith('/') ? path : '/' + path;
+        window.location.hash = '#' + clean;
       },
 
-      handleRoute() {
-        const path = this.getCurrentPath();
-        this.updateActiveNavs(path);
-        
-        // Close mobile drawer if open
-        closeMobileDrawer();
+      getCleanHashRoute() {
+        const hash = window.location.hash;
+        if (!hash || hash === '' || hash === '#' || hash === '#/') {
+          return '/';
+        }
+        let clean = hash.replace(/^#/, '');
+        if (!clean.startsWith('/')) {
+          clean = '/' + clean;
+        }
+        if (clean.length > 1 && clean.endsWith('/')) {
+          clean = clean.slice(0, -1);
+        }
+        return clean;
+      },
 
-        // Scroll to top
+      dispatch() {
+        closeMobileDrawer();
         window.scrollTo(0, 0);
 
-        // Update floating WhatsApp target to general desk
+        const currentRoute = this.getCleanHashRoute();
+
+        // Update active navigation classes
+        this.updateNavLinks(currentRoute);
+
+        // Update floating WhatsApp target
         updateFloatingWhatsApp();
 
-        // Match routes
-        if (path === '/' || path === '') {
-          renderHomePage();
-        } else if (path === '/about') {
-          renderAboutPage();
-        } else if (path === '/fleet') {
-          renderFleetDirectoryPage();
-        } else if (path.startsWith('/fleet/')) {
-          const slug = path.replace('/fleet/', '');
-          renderFleetDetailPage(slug);
-        } else if (path === '/services') {
-          renderServicesDirectoryPage();
-        } else if (path.startsWith('/services/')) {
-          const slug = path.replace('/services/', '');
-          renderServiceDetailPage(slug);
-        } else if (path === '/routes') {
-          renderRoutesPage();
-        } else if (path === '/book') {
-          renderBookingPage();
-        } else if (path === '/contact') {
-          renderContactPage();
+        // Execute route handler or 404
+        if (this.routes[currentRoute]) {
+          this.routes[currentRoute]();
         } else {
-          render404Page();
+          // If hash is completely empty or standard root, always show home
+          if (currentRoute === '/' || currentRoute === '') {
+            renderHomePage();
+          } else {
+            render404Page();
+          }
         }
       },
 
-      updateActiveNavs(currentPath) {
-        // Desktop nav active class
+      updateNavLinks(path) {
         document.querySelectorAll('.nav-desktop .nav-link, .nav-desktop .dropdown-item').forEach(el => {
           const r = el.getAttribute('data-route');
-          if (r === currentPath || (r !== '/' && currentPath.startsWith(r))) {
+          if (r === path || (r !== '/' && path.startsWith(r))) {
             el.classList.add('active');
           } else {
             el.classList.remove('active');
           }
         });
 
-        // Mobile nav active class
         document.querySelectorAll('.mobile-drawer .mobile-nav-link, .mobile-drawer .mobile-sub-link').forEach(el => {
           const r = el.getAttribute('data-route');
-          if (r === currentPath || (r !== '/' && currentPath.startsWith(r))) {
+          if (r === path || (r !== '/' && path.startsWith(r))) {
             el.classList.add('active');
           } else {
             el.classList.remove('active');
@@ -1869,9 +1742,6 @@
       }
     };
 
-    /**
-     * FLOATING WHATSAPP DEFAULT
-     */
     function updateFloatingWhatsApp(customMsg) {
       const btn = document.getElementById('floatingWhatsappBtn');
       const footerBtn = document.getElementById('footerWhatsappBtn');
@@ -1881,27 +1751,24 @@
       if (footerBtn) footerBtn.href = url;
     }
 
-    /**
-     * ==========================================================================
-     * PAGE RENDERERS
-     * ==========================================================================
-     */
+    /* ==========================================================================
+       4. PAGE VIEW TEMPLATES
+       ========================================================================== */
 
-    /* --- PAGE 1: HOMEPAGE --- */
+    /* VIEW 1: HOME PAGE */
     function renderHomePage() {
-      document.title = 'AuraCab | Premium Taxi & Mobility Services';
-      const app = document.getElementById('appContent');
+      document.title = 'AuraCab | Premium Chauffeur & Taxi Service';
+      const root = document.getElementById('app-root');
 
-      app.innerHTML = `
+      root.innerHTML = `
         <!-- HERO SECTION -->
         <section class="hero-section">
           <div class="hero-bg-overlay"></div>
           <div class="container hero-content">
             <div class="hero-grid">
-              <!-- Left Hero Text -->
               <div>
-                <span class="section-eyebrow" style="color: var(--color-amber-accent);">
-                  <i class="fa-solid fa-shield-halved"></i> Verified Fleet & Professional Drivers
+                <span class="eyebrow">
+                  <i class="fa-solid fa-shield-halved"></i> Verified Fleet &amp; Chauffeurs
                 </span>
                 <h1 class="hero-title">
                   Your Journey.<br>Our Priority.
@@ -1912,7 +1779,7 @@
                 <div class="hero-features">
                   <div class="hero-feature-item">
                     <i class="fa-solid fa-circle-check"></i>
-                    <span>Pre-journey upfront quotes</span>
+                    <span>All-inclusive fare quotes</span>
                   </div>
                   <div class="hero-feature-item">
                     <i class="fa-solid fa-circle-check"></i>
@@ -1920,36 +1787,36 @@
                   </div>
                   <div class="hero-feature-item">
                     <i class="fa-solid fa-circle-check"></i>
-                    <span>Sanitized & comfortable fleet</span>
+                    <span>Clean &amp; maintained fleet</span>
                   </div>
                 </div>
-                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-                  <a href="/book" class="btn btn-primary btn-lg" data-route="/book">
+                <div style="display: flex; flex-wrap: wrap; gap: 0.85rem;">
+                  <a href="#/book" class="btn btn-amber btn-lg" data-route="/book">
                     <i class="fa-solid fa-taxi"></i> Book Your Ride
                   </a>
-                  <a href="/fleet" class="btn btn-outline-white btn-lg" data-route="/fleet">
+                  <a href="#/fleet" class="btn btn-outline btn-lg" data-route="/fleet">
                     Explore Our Fleet
                   </a>
                 </div>
               </div>
 
-              <!-- Right Hero Booking Widget -->
+              <!-- Quick Booking Form -->
               <div>
                 <div class="booking-widget-card">
                   <div class="widget-header">
                     <h3>Fast Ride Enquiry</h3>
-                    <p>Submit your travel details for an immediate quote from dispatch.</p>
+                    <p>Submit your route for an upfront quotation from dispatch.</p>
                   </div>
-                  <form id="heroQuickBookingForm" novalidate>
+                  <form id="heroQuickForm" novalidate>
                     <div class="form-row two-col">
                       <div class="form-group">
                         <label class="form-label" for="hwTripType">Trip Type</label>
                         <div class="input-wrapper">
                           <i class="fa-solid fa-route input-icon"></i>
-                          <select class="form-control" id="hwTripType" required>
+                          <select class="form-control" id="hwTripType">
                             <option value="Local Taxi">Local Travel</option>
                             <option value="Airport Transfer">Airport Transfer</option>
-                            <option value="One-Way Taxi">One-Way Journey</option>
+                            <option value="One-Way Intercity">One-Way Intercity</option>
                             <option value="Round-Trip">Round-Trip Outstation</option>
                           </select>
                         </div>
@@ -1958,7 +1825,7 @@
                         <label class="form-label" for="hwVehicle">Vehicle</label>
                         <div class="input-wrapper">
                           <i class="fa-solid fa-car input-icon"></i>
-                          <select class="form-control" id="hwVehicle" required>
+                          <select class="form-control" id="hwVehicle">
                             <option value="Hatchback (4 Seater)">Hatchback (4 Seater)</option>
                             <option value="Sedan (4 Seater)" selected>Sedan (4 Seater)</option>
                             <option value="SUV (6-7 Seater)">SUV (6-7 Seater)</option>
@@ -1969,19 +1836,19 @@
                     </div>
 
                     <div class="form-group">
-                      <label class="form-label" for="hwPickup">Pickup Location</label>
+                      <label class="form-label" for="hwPickup">Pickup Location *</label>
                       <div class="input-wrapper">
                         <i class="fa-solid fa-location-dot input-icon"></i>
-                        <input type="text" class="form-control" id="hwPickup" placeholder="e.g. Hotel, Street or Area" required>
+                        <input type="text" class="form-control" id="hwPickup" placeholder="Pickup Address or Landmark" required>
                       </div>
                       <span class="form-error" id="hwPickupError">Please enter a pickup address.</span>
                     </div>
 
                     <div class="form-group">
-                      <label class="form-label" for="hwDrop">Destination</label>
+                      <label class="form-label" for="hwDrop">Destination *</label>
                       <div class="input-wrapper">
                         <i class="fa-solid fa-flag-checkered input-icon"></i>
-                        <input type="text" class="form-control" id="hwDrop" placeholder="e.g. Airport, Landmark or City" required>
+                        <input type="text" class="form-control" id="hwDrop" placeholder="Airport, City, or Destination" required>
                       </div>
                       <span class="form-error" id="hwDropError">Please enter a destination.</span>
                     </div>
@@ -2004,24 +1871,22 @@
                     </div>
 
                     <div class="form-group">
-                      <label class="form-label" for="hwPassengers">Number of Passengers</label>
+                      <label class="form-label" for="hwPassengers">Passengers</label>
                       <div class="input-wrapper">
-                        <i class="fa-solid fa-user-group input-icon"></i>
+                        <i class="fa-solid fa-users input-icon"></i>
                         <select class="form-control" id="hwPassengers">
-                          <option value="1 to 2">1 - 2 Passengers</option>
-                          <option value="3 to 4" selected>3 - 4 Passengers</option>
-                          <option value="5 to 6">5 - 6 Passengers</option>
+                          <option value="1 - 2">1 - 2 Passengers</option>
+                          <option value="3 - 4" selected>3 - 4 Passengers</option>
+                          <option value="5 - 6">5 - 6 Passengers</option>
                           <option value="7+">7+ Passengers</option>
                         </select>
                       </div>
                     </div>
 
-                    <button type="submit" class="btn btn-primary btn-full" style="margin-top: 0.5rem;">
-                      <i class="fa-brands fa-whatsapp"></i> Enquire Fare on WhatsApp
+                    <button type="submit" class="btn btn-whatsapp btn-full" style="margin-top: 0.5rem;">
+                      <i class="fa-brands fa-whatsapp"></i> Get Quote on WhatsApp
                     </button>
-                    <p class="form-note">
-                      Submitting initiates a prefilled WhatsApp enquiry. Your ride is confirmed after driver dispatch confirmation.
-                    </p>
+                    <p class="form-note">Submitting formats a WhatsApp itinerary enquiry. Your trip is confirmed once confirmed by the operator.</p>
                   </form>
                 </div>
               </div>
@@ -2030,47 +1895,47 @@
         </section>
 
         <!-- WHY CHOOSE US -->
-        <section class="section-py bg-white">
+        <section class="section-py bg-elevated">
           <div class="container">
-            <span class="section-eyebrow">Service Principles</span>
-            <h2 class="section-title">Built for Dependable Journeys</h2>
-            <p class="section-desc">We emphasize verified driver schedules, clear pre-travel communication, and well-maintained vehicles.</p>
+            <span class="eyebrow">Service Benefits</span>
+            <h2 class="section-title">Built for Dependable Travel</h2>
+            <p class="section-desc">We emphasize scheduled punctuality, transparent billing, and well-maintained vehicles.</p>
             
-            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+            <div class="services-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
               <div class="service-card">
                 <div class="service-icon-box">
                   <i class="fa-solid fa-receipt"></i>
                 </div>
                 <h3>Clear Fare Enquiries</h3>
-                <p>No sudden toll surprises. We discuss distance and journey details upfront before your journey begins.</p>
+                <p>No unexpected hidden surges. Journey specifics, toll inclusion, and driver allowances are communicated upfront.</p>
               </div>
               <div class="service-card">
                 <div class="service-icon-box">
-                  <i class="fa-solid fa-car-tunnel"></i>
+                  <i class="fa-solid fa-route"></i>
                 </div>
                 <h3>Flexible Travel Options</h3>
-                <p>From short point-to-point city trips to multi-day outstation itineraries, choose the plan that suits your schedule.</p>
+                <p>From short point-to-point transfers to extended multi-day highway itineraries, our schedules adapt to your needs.</p>
               </div>
               <div class="service-card">
                 <div class="service-icon-box">
-                  <i class="fa-solid fa-id-card"></i>
+                  <i class="fa-solid fa-headset"></i>
                 </div>
-                <h3>Direct Dispatch Assistance</h3>
+                <h3>Direct Dispatch Support</h3>
                 <p>Speak or message directly with our taxi operations desk for fast vehicle scheduling and route queries.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <!-- OUR FLEET SHOWCASE -->
-        <section class="section-py" style="background-color: var(--color-bg-light);">
+        <!-- FLEET PREVIEW -->
+        <section class="section-py">
           <div class="container">
             <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;">
               <div>
-                <span class="section-eyebrow">Vehicle Classes</span>
+                <span class="eyebrow">Vehicle Classes</span>
                 <h2 class="section-title" style="margin-bottom: 0;">Our Maintained Fleet</h2>
               </div>
-              <a href="/fleet" class="btn btn-outline" data-route="/fleet">
+              <a href="#/fleet" class="btn btn-outline" data-route="/fleet">
                 View All Categories <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
@@ -2084,18 +1949,18 @@
                   </div>
                   <div class="fleet-card-body">
                     <h3 class="fleet-card-title">${car.name}</h3>
-                    <div class="fleet-card-subtitle">${car.exampleModels}</div>
+                    <div class="fleet-card-subtitle">${car.models}</div>
                     <div class="fleet-specs">
-                      <div class="spec-item" title="Passenger Capacity">
+                      <div class="spec-item">
                         <i class="fa-solid fa-users"></i> ${car.passengers}
                       </div>
-                      <div class="spec-item" title="Luggage Allowance">
-                        <i class="fa-solid fa-suitcase-rolling"></i> ${car.luggage}
+                      <div class="spec-item">
+                        <i class="fa-solid fa-suitcase"></i> ${car.luggage}
                       </div>
                     </div>
                     <p class="fleet-trip-types">${car.idealFor}</p>
                     <div class="fleet-card-actions">
-                      <a href="/fleet/${car.slug}" class="btn btn-outline btn-sm" data-route="/fleet/${car.slug}">
+                      <a href="#/fleet/${car.slug}" class="btn btn-outline btn-sm" data-route="/fleet/${car.slug}">
                         Details
                       </a>
                       <a href="#" class="btn btn-whatsapp btn-sm" onclick="handleDirectCarEnquiry('${car.name}'); return false;">
@@ -2109,15 +1974,15 @@
           </div>
         </section>
 
-        <!-- SERVICES OVERVIEW -->
-        <section class="section-py bg-white">
+        <!-- SERVICES PREVIEW -->
+        <section class="section-py bg-elevated">
           <div class="container">
             <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem; margin-bottom: 2.5rem;">
               <div>
-                <span class="section-eyebrow">Transportation Solutions</span>
+                <span class="eyebrow">Transportation Solutions</span>
                 <h2 class="section-title" style="margin-bottom: 0;">Tailored Cab Services</h2>
               </div>
-              <a href="/services" class="btn btn-outline" data-route="/services">
+              <a href="#/services" class="btn btn-outline" data-route="/services">
                 Explore All Services <i class="fa-solid fa-arrow-right"></i>
               </a>
             </div>
@@ -2134,7 +1999,7 @@
                     ${srv.highlights.map(h => `<li><i class="fa-solid fa-check"></i> ${h}</li>`).join('')}
                   </ul>
                   <div style="display: flex; gap: 0.5rem; margin-top: auto;">
-                    <a href="/services/${srv.slug}" class="btn btn-outline btn-sm" data-route="/services/${srv.slug}">
+                    <a href="#/services/${srv.slug}" class="btn btn-outline btn-sm" data-route="/services/${srv.slug}">
                       Learn More
                     </a>
                     <a href="#" class="btn btn-whatsapp btn-sm" onclick="handleDirectServiceEnquiry('${srv.title}'); return false;">
@@ -2147,10 +2012,10 @@
           </div>
         </section>
 
-        <!-- POPULAR ROUTES -->
-        <section class="section-py" style="background-color: var(--color-bg-light);">
+        <!-- POPULAR ROUTES PREVIEW -->
+        <section class="section-py">
           <div class="container">
-            <span class="section-eyebrow">Intercity & Transit</span>
+            <span class="eyebrow">Intercity &amp; Transit</span>
             <h2 class="section-title">Popular Travel Routes</h2>
             <p class="section-desc">Sample popular journeys served by our fleet. Inquire directly for custom departures.</p>
             
@@ -2159,8 +2024,8 @@
                 <div class="route-card">
                   <div>
                     <div class="route-header">
-                      <span class="badge">${rt.tag}</span>
-                      <span style="font-size: 0.8rem; color: var(--color-text-muted);"><i class="fa-solid fa-clock"></i> ${rt.verifiedDuration}</span>
+                      <span class="badge-pill">${rt.tag}</span>
+                      <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-clock"></i> ${rt.duration}</span>
                     </div>
                     <div class="route-path">
                       <span>${rt.from}</span>
@@ -2169,7 +2034,7 @@
                     </div>
                     <div class="route-details">
                       <div><strong>Type:</strong> ${rt.type}</div>
-                      <div><strong>Cars:</strong> ${rt.vehicles}</div>
+                      <div><strong>Vehicles:</strong> ${rt.vehicles}</div>
                     </div>
                   </div>
                   <a href="#" class="btn btn-whatsapp btn-sm btn-full" onclick="handleRouteEnquiry('${rt.from}', '${rt.to}'); return false;">
@@ -2180,23 +2045,23 @@
             </div>
 
             <div style="text-align: center; margin-top: 2rem;">
-              <a href="/routes" class="btn btn-dark" data-route="/routes">
-                Browse All Popular Routes & Custom Query
+              <a href="#/routes" class="btn btn-surface" data-route="/routes">
+                Browse All Popular Routes &amp; Custom Queries
               </a>
             </div>
           </div>
         </section>
 
-        <!-- FINAL CALL TO ACTION -->
-        <section class="section-py bg-dark" style="border-top: 1px solid var(--color-charcoal-border);">
+        <!-- FINAL CTA -->
+        <section class="section-py bg-elevated" style="border-top: 1px solid var(--border-subtle);">
           <div class="container" style="text-align: center;">
-            <span class="section-eyebrow" style="color: var(--color-amber-accent);">Ready to Travel?</span>
+            <span class="eyebrow">Ready to Travel?</span>
             <h2 class="section-title" style="margin-bottom: 1rem;">Where Would You Like to Go?</h2>
-            <p style="max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem; color: #cbd5e1;">
+            <p style="max-width: 600px; margin: 0 auto 2rem; font-size: 1.05rem;">
               Share your pickup location and destination to enquire about your next journey with fast, transparent vehicle dispatch.
             </p>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
-              <a href="/book" class="btn btn-primary btn-lg" data-route="/book">
+              <a href="#/book" class="btn btn-amber btn-lg" data-route="/book">
                 <i class="fa-solid fa-calendar-check"></i> Book a Taxi
               </a>
               <a href="#" class="btn btn-whatsapp btn-lg" onclick="handleGenericDeskChat(); return false;">
@@ -2207,47 +2072,46 @@
         </section>
       `;
 
-      // Attach form listener
       initHeroForm();
     }
 
-    /* --- PAGE 2: ABOUT US PAGE --- */
+    /* VIEW 2: ABOUT US */
     function renderAboutPage() {
-      document.title = 'About Us | AuraCab Professional Taxi Services';
-      const app = document.getElementById('appContent');
+      document.title = 'About Us | AuraCab Taxi Services';
+      const root = document.getElementById('app-root');
 
-      app.innerHTML = `
+      root.innerHTML = `
         <div class="page-hero">
           <div class="container">
             <div class="breadcrumb">
-              <a href="/" data-route="/">Home</a>
+              <a href="#/" data-route="/">Home</a>
               <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
               <span>About Us</span>
             </div>
-            <h1 class="section-title" style="color: #ffffff; margin-bottom: 0.5rem;">About AuraCab</h1>
-            <p style="color: #cbd5e1; max-width: 600px;">Committed to passenger comfort, punctual schedules, and honest travel communication.</p>
+            <h1 class="section-title" style="margin-bottom: 0.5rem;">About AuraCab</h1>
+            <p style="max-width: 600px;">Committed to passenger comfort, punctual schedules, and honest travel communication.</p>
           </div>
         </div>
 
-        <section class="section-py bg-white">
+        <section class="section-py">
           <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;" class="about-grid">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
               <div>
-                <span class="section-eyebrow">Our Transportation Standard</span>
+                <span class="eyebrow">Our Transportation Standard</span>
                 <h2 class="section-title">A Practical, Reliable Way to Travel</h2>
-                <p style="margin-bottom: 1.25rem; line-height: 1.7;">
-                  AuraCab operates as a dedicated regional passenger cab service. We bridge the gap between impersonal rideshare apps with erratic surge pricing and traditional operators who lack clear communication.
+                <p style="margin-bottom: 1.25rem;">
+                  AuraCab operates as a dedicated regional passenger cab service. We bridge the gap between impersonal rideshare apps with unpredictable surges and unverified local options lacking clear communication.
                 </p>
-                <p style="margin-bottom: 1.5rem; line-height: 1.7;">
+                <p style="margin-bottom: 1.5rem;">
                   Our operations team oversees trip coordination directly. From confirmed flight pickups in the early morning to scheduled outstation family road trips, we provide dedicated drivers who respect your timeline and prioritize road safety.
                 </p>
                 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.25rem; margin-top: 2rem;">
-                  <div style="border-left: 3px solid var(--color-amber-primary); padding-left: 1rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 2rem;">
+                  <div style="border-left: 3px solid var(--accent-amber); padding-left: 1rem;">
                     <h4 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Verified Drivers</h4>
-                    <p style="font-size: 0.85rem;">Background-checked personnel with established highway and urban navigation track records.</p>
+                    <p style="font-size: 0.85rem;">Background-checked chauffeurs with established highway and urban navigation track records.</p>
                   </div>
-                  <div style="border-left: 3px solid var(--color-amber-primary); padding-left: 1rem;">
+                  <div style="border-left: 3px solid var(--accent-amber); padding-left: 1rem;">
                     <h4 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Direct Human Help</h4>
                     <p style="font-size: 0.85rem;">No automated chatbot mazes; communicate directly with our operations dispatch on WhatsApp or phone.</p>
                   </div>
@@ -2257,20 +2121,20 @@
               <div>
                 <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80" 
                      alt="Taxi Fleet and Road" 
-                     style="border-radius: var(--radius-xl); box-shadow: var(--shadow-lg); width: 100%; height: 380px; object-fit: cover;">
+                     style="border-radius: var(--radius-xl); box-shadow: var(--shadow-card); width: 100%; height: 380px; object-fit: cover; border: 1px solid var(--border-subtle);">
               </div>
             </div>
           </div>
         </section>
 
-        <section class="section-py" style="background-color: var(--color-bg-light);">
+        <section class="section-py bg-elevated">
           <div class="container">
             <div style="max-width: 800px; margin: 0 auto;">
-              <span class="section-eyebrow" style="text-align: center; display: block;">Booking Workflow</span>
+              <span class="eyebrow" style="text-align: center; display: block;">Booking Workflow</span>
               <h2 class="section-title" style="text-align: center; margin-bottom: 2.5rem;">How Our Process Works</h2>
               
               <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                <div class="contact-card-box" style="display: flex; gap: 1.25rem; align-items: flex-start;">
+                <div class="content-box" style="display: flex; gap: 1.25rem; align-items: flex-start;">
                   <div class="service-icon-box" style="margin-bottom: 0; flex-shrink: 0;">1</div>
                   <div>
                     <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">Submit Travel Enquiry</h3>
@@ -2278,15 +2142,15 @@
                   </div>
                 </div>
 
-                <div class="contact-card-box" style="display: flex; gap: 1.25rem; align-items: flex-start;">
+                <div class="content-box" style="display: flex; gap: 1.25rem; align-items: flex-start;">
                   <div class="service-icon-box" style="margin-bottom: 0; flex-shrink: 0;">2</div>
                   <div>
-                    <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">Fare Quote & Confirmation</h3>
+                    <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">Fare Quote &amp; Confirmation</h3>
                     <p style="font-size: 0.9rem;">Our dispatch desk reviews route availability, presents an all-inclusive estimate, and confirms vehicle assignment.</p>
                   </div>
                 </div>
 
-                <div class="contact-card-box" style="display: flex; gap: 1.25rem; align-items: flex-start;">
+                <div class="content-box" style="display: flex; gap: 1.25rem; align-items: flex-start;">
                   <div class="service-icon-box" style="margin-bottom: 0; flex-shrink: 0;">3</div>
                   <div>
                     <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem;">Punctual Doorstep Pickup</h3>
@@ -2296,7 +2160,7 @@
               </div>
 
               <div style="text-align: center; margin-top: 3rem;">
-                <a href="/book" class="btn btn-primary" data-route="/book">
+                <a href="#/book" class="btn btn-amber btn-lg" data-route="/book">
                   <i class="fa-solid fa-calendar-check"></i> Book Your Journey With Us
                 </a>
               </div>
@@ -2306,27 +2170,27 @@
       `;
     }
 
-    /* --- PAGE 3: FLEET DIRECTORY --- */
+    /* VIEW 3: FLEET DIRECTORY */
     function renderFleetDirectoryPage() {
       document.title = 'Our Fleet | Passenger Vehicles & Capacities';
-      const app = document.getElementById('appContent');
+      const root = document.getElementById('app-root');
 
-      app.innerHTML = `
+      root.innerHTML = `
         <div class="page-hero">
           <div class="container">
             <div class="breadcrumb">
-              <a href="/" data-route="/">Home</a>
+              <a href="#/" data-route="/">Home</a>
               <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
               <span>Our Fleet</span>
             </div>
-            <h1 class="section-title" style="color: #ffffff; margin-bottom: 0.5rem;">Vehicle Categories</h1>
-            <p style="color: #cbd5e1; max-width: 600px;">
+            <h1 class="section-title" style="margin-bottom: 0.5rem;">Vehicle Categories</h1>
+            <p style="max-width: 600px;">
               Choose from clean, verified hatchbacks, sedans, executive SUVs, and high-capacity tempo travellers suited for individual or group travel.
             </p>
           </div>
         </div>
 
-        <section class="section-py bg-white">
+        <section class="section-py">
           <div class="container">
             <div class="fleet-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
               ${FLEET_DATA.map(car => `
@@ -2337,7 +2201,7 @@
                   </div>
                   <div class="fleet-card-body">
                     <h3 class="fleet-card-title">${car.name}</h3>
-                    <div class="fleet-card-subtitle">${car.exampleModels}</div>
+                    <div class="fleet-card-subtitle">${car.models}</div>
                     
                     <div class="fleet-specs">
                       <div class="spec-item">
@@ -2351,8 +2215,8 @@
                     <p class="fleet-trip-types">${car.description}</p>
                     
                     <div class="fleet-card-actions">
-                      <a href="/fleet/${car.slug}" class="btn btn-outline btn-sm" data-route="/fleet/${car.slug}">
-                        Vehicle Details
+                      <a href="#/fleet/${car.slug}" class="btn btn-outline btn-sm" data-route="/fleet/${car.slug}">
+                        Details
                       </a>
                       <a href="#" class="btn btn-whatsapp btn-sm" onclick="handleDirectCarEnquiry('${car.name}'); return false;">
                         <i class="fa-brands fa-whatsapp"></i> Inquire
@@ -2367,7 +2231,7 @@
       `;
     }
 
-    /* --- PAGE 4: INDIVIDUAL FLEET DETAIL --- */
+    /* VIEW 4: VEHICLE DETAIL */
     function renderFleetDetailPage(slug) {
       const car = FLEET_DATA.find(c => c.slug === slug);
       if (!car) {
@@ -2375,27 +2239,26 @@
         return;
       }
 
-      document.title = `${car.name} Rental & Booking | AuraCab`;
-      const app = document.getElementById('appContent');
+      document.title = `${car.name} Booking | AuraCab`;
+      const root = document.getElementById('app-root');
 
-      app.innerHTML = `
+      root.innerHTML = `
         <div class="page-hero">
           <div class="container">
             <div class="breadcrumb">
-              <a href="/" data-route="/">Home</a>
+              <a href="#/" data-route="/">Home</a>
               <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
-              <a href="/fleet" data-route="/fleet">Fleet</a>
+              <a href="#/fleet" data-route="/fleet">Fleet</a>
               <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
               <span>${car.name}</span>
             </div>
-            <h1 class="section-title" style="color: #ffffff; margin-bottom: 0.5rem;">${car.name}</h1>
-            <p style="color: #cbd5e1; max-width: 600px;">${car.exampleModels} — Dedicated passenger transportation.</p>
+            <h1 class="section-title" style="margin-bottom: 0.5rem;">${car.name}</h1>
+            <p style="max-width: 600px;">${car.models} — Dedicated passenger transportation.</p>
           </div>
         </div>
 
-        <section class="section-py bg-white">
+        <section class="section-py">
           <div class="container">
-            <!-- Image Gallery -->
             <div class="detail-gallery">
               <img src="${car.imageMain}" alt="${car.name} Main View" class="detail-img-main">
               <div style="display: flex; flex-direction: column; gap: 1rem;">
@@ -2404,23 +2267,23 @@
               </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem;" class="detail-content-grid">
+            <div style="display: grid; grid-template-columns: 1fr; gap: 2.5rem;">
               <div>
-                <span class="section-eyebrow">Specifications & Capacity</span>
+                <span class="eyebrow">Specifications &amp; Capacity</span>
                 <h2 class="section-title" style="font-size: 1.85rem;">About this Vehicle Class</h2>
-                <p style="line-height: 1.7; margin-bottom: 1.5rem;">${car.description}</p>
+                <p style="margin-bottom: 1.5rem;">${car.description}</p>
 
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
-                  <div style="background-color: var(--color-bg-light); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border-subtle);">
-                    <div style="font-size: 0.8rem; color: var(--color-text-muted); text-transform: uppercase;">Passenger Capacity</div>
-                    <div style="font-size: 1.35rem; font-weight: 700; color: var(--color-charcoal-dark); margin-top: 0.25rem;">
-                      <i class="fa-solid fa-users" style="color: var(--color-amber-primary);"></i> ${car.passengers} Passengers
+                  <div style="background-color: var(--bg-surface); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                    <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Passenger Capacity</div>
+                    <div style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-top: 0.25rem;">
+                      <i class="fa-solid fa-users" style="color: var(--accent-amber);"></i> ${car.passengers} Passengers
                     </div>
                   </div>
-                  <div style="background-color: var(--color-bg-light); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--color-border-subtle);">
-                    <div style="font-size: 0.8rem; color: var(--color-text-muted); text-transform: uppercase;">Luggage Capacity</div>
-                    <div style="font-size: 1.35rem; font-weight: 700; color: var(--color-charcoal-dark); margin-top: 0.25rem;">
-                      <i class="fa-solid fa-suitcase" style="color: var(--color-amber-primary);"></i> ${car.luggage}
+                  <div style="background-color: var(--bg-surface); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                    <div style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Luggage Capacity</div>
+                    <div style="font-size: 1.35rem; font-weight: 700; color: #ffffff; margin-top: 0.25rem;">
+                      <i class="fa-solid fa-suitcase" style="color: var(--accent-amber);"></i> ${car.luggage}
                     </div>
                   </div>
                 </div>
@@ -2437,7 +2300,7 @@
                   <a href="#" class="btn btn-whatsapp btn-lg" onclick="handleDirectCarEnquiry('${car.name}'); return false;">
                     <i class="fa-brands fa-whatsapp"></i> Inquire ${car.name} Fare
                   </a>
-                  <a href="/book" class="btn btn-primary btn-lg" data-route="/book">
+                  <a href="#/book" class="btn btn-amber btn-lg" data-route="/book">
                     Open Booking Form
                   </a>
                 </div>
@@ -2448,27 +2311,27 @@
       `;
     }
 
-    /* --- PAGE 5: SERVICES DIRECTORY --- */
+    /* VIEW 5: SERVICES DIRECTORY */
     function renderServicesDirectoryPage() {
       document.title = 'Taxi Services | Local, Airport & Outstation';
-      const app = document.getElementById('appContent');
+      const root = document.getElementById('app-root');
 
-      app.innerHTML = `
+      root.innerHTML = `
         <div class="page-hero">
           <div class="container">
             <div class="breadcrumb">
-              <a href="/" data-route="/">Home</a>
+              <a href="#/" data-route="/">Home</a>
               <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
               <span>Services</span>
             </div>
-            <h1 class="section-title" style="color: #ffffff; margin-bottom: 0.5rem;">Mobility & Taxi Services</h1>
-            <p style="color: #cbd5e1; max-width: 600px;">
+            <h1 class="section-title" style="margin-bottom: 0.5rem;">Mobility &amp; Taxi Services</h1>
+            <p style="max-width: 600px;">
               From point-to-point city drops and on-time airport transfers to long-distance round trips.
             </p>
           </div>
         </div>
 
-        <section class="section-py bg-white">
+        <section class="section-py">
           <div class="container">
             <div class="services-grid">
               ${SERVICES_DATA.map(srv => `
@@ -2482,7 +2345,7 @@
                     ${srv.highlights.map(h => `<li><i class="fa-solid fa-circle-check"></i> ${h}</li>`).join('')}
                   </ul>
                   <div style="display: flex; gap: 0.5rem; margin-top: auto;">
-                    <a href="/services/${srv.slug}" class="btn btn-outline btn-sm" data-route="/services/${srv.slug}">
+                    <a href="#/services/${srv.slug}" class="btn btn-outline btn-sm" data-route="/services/${srv.slug}">
                       View Service
                     </a>
                     <a href="#" class="btn btn-whatsapp btn-sm" onclick="handleDirectServiceEnquiry('${srv.title}'); return false;">
@@ -2497,7 +2360,7 @@
       `;
     }
 
-    /* --- PAGE 6: INDIVIDUAL SERVICE DETAIL --- */
+    /* VIEW 6: SERVICE DETAIL */
     function renderServiceDetailPage(slug) {
       const srv = SERVICES_DATA.find(s => s.slug === slug);
       if (!srv) {
@@ -2505,25 +2368,25 @@
         return;
       }
 
-      document.title = `${srv.title} Booking & Quotes | AuraCab`;
-      const app = document.getElementById('appContent');
+      document.title = `${srv.title} Booking | AuraCab`;
+      const root = document.getElementById('app-root');
 
-      app.innerHTML = `
+      root.innerHTML = `
         <div class="page-hero">
           <div class="container">
             <div class="breadcrumb">
-              <a href="/" data-route="/">Home</a>
+              <a href="#/" data-route="/">Home</a>
               <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
-              <a href="/services" data-route="/services">Services</a>
+              <a href="#/services" data-route="/services">Services</a>
               <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
               <span>${srv.title}</span>
             </div>
-            <h1 class="section-title" style="color: #ffffff; margin-bottom: 0.5rem;">${srv.title}</h1>
-            <p style="color: #cbd5e1; max-width: 600px;">${srv.summary}</p>
+            <h1 class="section-title" style="margin-bottom: 0.5rem;">${srv.title}</h1>
+            <p style="max-width: 600px;">${srv.summary}</p>
           </div>
         </div>
 
-        <section class="section-py bg-white">
+        <section class="section-py">
           <div class="container">
             <div style="max-width: 820px; margin: 0 auto;">
               <div class="service-icon-box" style="width: 64px; height: 64px; font-size: 1.6rem;">
@@ -2531,7 +2394,7 @@
               </div>
               
               <h2 class="section-title" style="font-size: 1.85rem;">Service Overview</h2>
-              <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem;">
+              <p style="font-size: 1.05rem; margin-bottom: 2rem;">
                 ${srv.fullText}
               </p>
 
@@ -2540,23 +2403,23 @@
                 ${srv.highlights.map(h => `<li style="padding: 0.35rem 0;"><i class="fa-solid fa-check"></i> ${h}</li>`).join('')}
               </ul>
 
-              <div class="contact-card-box" style="margin-bottom: 2.5rem; background-color: var(--color-bg-light);">
+              <div class="content-box" style="margin-bottom: 2.5rem; background-color: var(--bg-surface);">
                 <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Ready to Enquire about ${srv.title}?</h3>
                 <p style="font-size: 0.9rem; margin-bottom: 1.25rem;">
-                  Message our booking desk with your travel date, time, and address to get immediate car options and upfront pricing.
+                  Message our booking desk with your travel date, time, and addresses to receive vehicle options and upfront pricing.
                 </p>
                 <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
                   <a href="#" class="btn btn-whatsapp" onclick="handleDirectServiceEnquiry('${srv.title}'); return false;">
                     <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
                   </a>
-                  <a href="/book" class="btn btn-primary" data-route="/book">
+                  <a href="#/book" class="btn btn-amber" data-route="/book">
                     Fill Booking Form
                   </a>
                 </div>
               </div>
 
               <div>
-                <a href="/services" class="btn btn-outline btn-sm" data-route="/services">
+                <a href="#/services" class="btn btn-outline btn-sm" data-route="/services">
                   <i class="fa-solid fa-arrow-left"></i> Back to all services
                 </a>
               </div>
@@ -2566,31 +2429,30 @@
       `;
     }
 
-    /* --- PAGE 7: POPULAR ROUTES --- */
+    /* VIEW 7: ROUTES */
     function renderRoutesPage() {
-      document.title = 'Popular Taxi Routes & Intercity Travel | AuraCab';
-      const app = document.getElementById('appContent');
+      document.title = 'Popular Taxi Routes | AuraCab';
+      const root = document.getElementById('app-root');
 
-      app.innerHTML = `
+      root.innerHTML = `
         <div class="page-hero">
           <div class="container">
             <div class="breadcrumb">
-              <a href="/" data-route="/">Home</a>
+              <a href="#/" data-route="/">Home</a>
               <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
               <span>Popular Routes</span>
             </div>
-            <h1 class="section-title" style="color: #ffffff; margin-bottom: 0.5rem;">Popular Taxi Routes</h1>
-            <p style="color: #cbd5e1; max-width: 600px;">
+            <h1 class="section-title" style="margin-bottom: 0.5rem;">Popular Taxi Routes</h1>
+            <p style="max-width: 600px;">
               Frequently serviced intercity highways, airport corridors, and regional travel links.
             </p>
           </div>
         </div>
 
-        <section class="section-py bg-white">
+        <section class="section-py">
           <div class="container">
-            <!-- Filter search bar -->
             <div class="filter-bar">
-              <input type="text" id="routeSearchInput" class="filter-input" placeholder="Search route by location (e.g. Airport, Beach, City)...">
+              <input type="text" id="routeSearchInput" class="form-control no-icon" placeholder="Search routes by destination or origin (e.g. Airport, Beach, City)...">
             </div>
 
             <div class="routes-grid" id="routesGridContainer">
@@ -2598,8 +2460,8 @@
                 <div class="route-card" data-search="${(rt.from + ' ' + rt.to + ' ' + rt.type).toLowerCase()}">
                   <div>
                     <div class="route-header">
-                      <span class="badge">${rt.tag}</span>
-                      <span style="font-size: 0.8rem; color: var(--color-text-muted);"><i class="fa-solid fa-clock"></i> ${rt.verifiedDuration}</span>
+                      <span class="badge-pill">${rt.tag}</span>
+                      <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-clock"></i> ${rt.duration}</span>
                     </div>
                     <div class="route-path">
                       <span>${rt.from}</span>
@@ -2608,7 +2470,7 @@
                     </div>
                     <div class="route-details">
                       <div><strong>Type:</strong> ${rt.type}</div>
-                      <div><strong>Available Cars:</strong> ${rt.vehicles}</div>
+                      <div><strong>Vehicles:</strong> ${rt.vehicles}</div>
                     </div>
                   </div>
                   <a href="#" class="btn btn-whatsapp btn-sm btn-full" onclick="handleRouteEnquiry('${rt.from}', '${rt.to}'); return false;">
@@ -2619,16 +2481,15 @@
             </div>
 
             <div id="noRoutesMessage" style="display: none; text-align: center; padding: 3rem 1rem;">
-              <p style="font-size: 1.1rem; color: var(--color-text-muted); margin-bottom: 1rem;">No matching routes found in sample directory.</p>
+              <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 1rem;">No matching routes found.</p>
               <button class="btn btn-whatsapp" onclick="handleGenericDeskChat()">
-                <i class="fa-brands fa-whatsapp"></i> Enquire for Custom Route Quote
+                <i class="fa-brands fa-whatsapp"></i> Inquire for Custom Route
               </button>
             </div>
           </div>
         </section>
       `;
 
-      // Live search filter
       const searchInput = document.getElementById('routeSearchInput');
       if (searchInput) {
         searchInput.addEventListener('input', (e) => {
@@ -2652,39 +2513,36 @@
       }
     }
 
-    /* --- PAGE 8: COMPREHENSIVE BOOKING PAGE --- */
+    /* VIEW 8: FULL BOOKING FORM */
     function renderBookingPage() {
-      document.title = 'Book a Taxi | Transparent Fare Enquiry | AuraCab';
-      const app = document.getElementById('appContent');
-
-      // Default minimum date to today
+      document.title = 'Book a Taxi | AuraCab';
+      const root = document.getElementById('app-root');
       const todayIso = new Date().toISOString().split('T')[0];
 
-      app.innerHTML = `
+      root.innerHTML = `
         <div class="page-hero">
           <div class="container">
             <div class="breadcrumb">
-              <a href="/" data-route="/">Home</a>
+              <a href="#/" data-route="/">Home</a>
               <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
               <span>Book a Taxi</span>
             </div>
-            <h1 class="section-title" style="color: #ffffff; margin-bottom: 0.5rem;">Enquire & Book a Taxi</h1>
-            <p style="color: #cbd5e1; max-width: 600px;">
+            <h1 class="section-title" style="margin-bottom: 0.5rem;">Enquire &amp; Book a Taxi</h1>
+            <p style="max-width: 600px;">
               Complete the details below to generate your direct WhatsApp booking enquiry.
             </p>
           </div>
         </div>
 
-        <section class="section-py bg-white">
+        <section class="section-py">
           <div class="container">
             <div style="max-width: 760px; margin: 0 auto;">
-              <div class="contact-card-box">
+              <div class="content-box">
                 <form id="fullBookingForm" novalidate>
-                  <h3 style="font-size: 1.35rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--color-border-subtle);">
-                    Traveler & Trip Details
+                  <h3 style="font-size: 1.35rem; margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 1px solid var(--border-subtle);">
+                    Traveler &amp; Trip Details
                   </h3>
 
-                  <!-- Name & Phone -->
                   <div class="form-row two-col">
                     <div class="form-group">
                       <label class="form-label" for="bkName">Full Name *</label>
@@ -2705,12 +2563,11 @@
                     </div>
                   </div>
 
-                  <!-- Pickup & Drop -->
                   <div class="form-group">
                     <label class="form-label" for="bkPickup">Pickup Location *</label>
                     <div class="input-wrapper">
                       <i class="fa-solid fa-location-dot input-icon"></i>
-                      <input type="text" class="form-control" id="bkPickup" placeholder="Doorstep address, hotel, or landmark" required>
+                      <input type="text" class="form-control" id="bkPickup" placeholder="Pickup Address or Landmark" required>
                     </div>
                     <span class="form-error" id="bkPickupError">Please specify pickup location.</span>
                   </div>
@@ -2719,12 +2576,11 @@
                     <label class="form-label" for="bkDrop">Destination Address *</label>
                     <div class="input-wrapper">
                       <i class="fa-solid fa-flag-checkered input-icon"></i>
-                      <input type="text" class="form-control" id="bkDrop" placeholder="Airport, destination city, or drop point" required>
+                      <input type="text" class="form-control" id="bkDrop" placeholder="Airport, City or Drop point" required>
                     </div>
                     <span class="form-error" id="bkDropError">Please specify destination.</span>
                   </div>
 
-                  <!-- Trip Type & Vehicle -->
                   <div class="form-row two-col">
                     <div class="form-group">
                       <label class="form-label" for="bkTripType">Trip Type *</label>
@@ -2747,13 +2603,12 @@
                           <option value="Hatchback (4 Seater)">Hatchback (Swift / WagonR)</option>
                           <option value="Sedan (4 Seater)" selected>Sedan (Dzire / Etios)</option>
                           <option value="SUV (6-7 Seater)">Executive SUV (Innova / Ertiga)</option>
-                          <option value="Tempo Traveller (12+)">Tempo Traveller (12-17 Seater)</option>
+                          <option value="Tempo Traveller (12+)">Tempo Traveller (12+ Seater)</option>
                         </select>
                       </div>
                     </div>
                   </div>
 
-                  <!-- Dates & Times -->
                   <div class="form-row two-col">
                     <div class="form-group">
                       <label class="form-label" for="bkPickupDate">Travel Date *</label>
@@ -2761,7 +2616,7 @@
                         <i class="fa-regular fa-calendar input-icon"></i>
                         <input type="date" class="form-control" id="bkPickupDate" min="${todayIso}" required>
                       </div>
-                      <span class="form-error" id="bkDateError">Please choose a valid travel date.</span>
+                      <span class="form-error" id="bkDateError">Please choose a travel date.</span>
                     </div>
 
                     <div class="form-group">
@@ -2774,7 +2629,6 @@
                     </div>
                   </div>
 
-                  <!-- Conditional Return Date for Round-Trip -->
                   <div class="form-group" id="returnDateContainer" style="display: none;">
                     <label class="form-label" for="bkReturnDate">Return Date (For Round Trips) *</label>
                     <div class="input-wrapper">
@@ -2783,7 +2637,6 @@
                     </div>
                   </div>
 
-                  <!-- Passengers & Notes -->
                   <div class="form-row two-col">
                     <div class="form-group">
                       <label class="form-label" for="bkPassengers">Passenger Count</label>
@@ -2804,7 +2657,7 @@
                       <label class="form-label" for="bkSpecial">Special Notes (Optional)</label>
                       <div class="input-wrapper">
                         <i class="fa-solid fa-pen input-icon"></i>
-                        <input type="text" class="form-control" id="bkSpecial" placeholder="e.g. Flight number, extra luggage">
+                        <input type="text" class="form-control" id="bkSpecial" placeholder="e.g. Flight number, extra bags">
                       </div>
                     </div>
                   </div>
@@ -2812,7 +2665,7 @@
                   <div class="notice-box">
                     <i class="fa-solid fa-circle-info"></i>
                     <div>
-                      <strong>Note:</strong> Submitting this form opens WhatsApp with your prefilled itinerary details. Our operator will verify availability and confirm your ride.
+                      <strong>Note:</strong> Submitting sends this formatted itinerary to WhatsApp. Our operations desk will reply with vehicle availability and final confirmation.
                     </div>
                   </div>
 
@@ -2826,7 +2679,6 @@
         </section>
       `;
 
-      // Set default dates & attach events
       const dateEl = document.getElementById('bkPickupDate');
       if (dateEl) dateEl.value = todayIso;
       
@@ -2845,35 +2697,34 @@
       initFullBookingForm();
     }
 
-    /* --- PAGE 9: CONTACT US PAGE --- */
+    /* VIEW 9: CONTACT */
     function renderContactPage() {
-      document.title = 'Contact Support & Booking Desk | AuraCab';
-      const app = document.getElementById('appContent');
+      document.title = 'Contact Us | AuraCab';
+      const root = document.getElementById('app-root');
 
-      app.innerHTML = `
+      root.innerHTML = `
         <div class="page-hero">
           <div class="container">
             <div class="breadcrumb">
-              <a href="/" data-route="/">Home</a>
+              <a href="#/" data-route="/">Home</a>
               <i class="fa-solid fa-chevron-right" style="font-size: 0.65rem;"></i>
               <span>Contact Us</span>
             </div>
-            <h1 class="section-title" style="color: #ffffff; margin-bottom: 0.5rem;">Contact AuraCab</h1>
-            <p style="color: #cbd5e1; max-width: 600px;">
-              Get in touch with our operations team for immediate bookings, custom itinerary quotes, or general inquiries.
+            <h1 class="section-title" style="margin-bottom: 0.5rem;">Contact AuraCab</h1>
+            <p style="max-width: 600px;">
+              Get in touch with our operations team for immediate bookings, custom quotes, or inquiries.
             </p>
           </div>
         </div>
 
-        <section class="section-py bg-white">
+        <section class="section-py">
           <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr; gap: 3rem;" class="contact-grid">
-              <!-- Left Column: Contact details -->
+            <div style="display: grid; grid-template-columns: 1fr; gap: 3rem;">
               <div>
-                <span class="section-eyebrow">Direct Dispatch</span>
+                <span class="eyebrow">Direct Dispatch</span>
                 <h2 class="section-title" style="font-size: 1.85rem;">We're Here to Help</h2>
-                <p style="line-height: 1.7; margin-bottom: 2rem;">
-                  For instant trip confirmation or urgent airport departure scheduling, WhatsApp or phone calls are the quickest methods to reach our shift dispatcher.
+                <p style="margin-bottom: 2rem;">
+                  For instant trip confirmation or urgent airport departure scheduling, WhatsApp or direct calls are the fastest way to reach our shift dispatcher.
                 </p>
 
                 <div style="display: flex; flex-direction: column; gap: 1.5rem;">
@@ -2884,24 +2735,24 @@
                     <div>
                       <h4 style="font-size: 1rem;">Telephone Support</h4>
                       <p style="font-size: 0.9rem; margin-top: 0.2rem;">
-                        <a href="tel:+919876543210" style="color: var(--color-charcoal-dark); font-weight: 600;">+91 98765 43210</a>
+                        <a href="tel:+919876543210" style="color: #ffffff; font-weight: 600;">+91 98765 43210</a>
                       </p>
-                      <span style="font-size: 0.75rem; color: var(--color-text-muted);">Available daily: 06:00 AM – 11:00 PM</span>
+                      <span style="font-size: 0.75rem; color: var(--text-dim);">Available daily: 06:00 AM – 11:00 PM</span>
                     </div>
                   </div>
 
                   <div style="display: flex; gap: 1rem; align-items: flex-start;">
-                    <div class="service-icon-box" style="margin-bottom: 0; flex-shrink: 0; background-color: #dcfce7; color: #16a34a;">
+                    <div class="service-icon-box" style="margin-bottom: 0; flex-shrink: 0; background-color: rgba(37, 211, 102, 0.15); color: var(--whatsapp-green);">
                       <i class="fa-brands fa-whatsapp"></i>
                     </div>
                     <div>
                       <h4 style="font-size: 1rem;">WhatsApp Desk</h4>
                       <p style="font-size: 0.9rem; margin-top: 0.2rem;">
-                        <a href="#" onclick="handleGenericDeskChat(); return false;" style="color: #16a34a; font-weight: 600;">
+                        <a href="#" onclick="handleGenericDeskChat(); return false;" style="color: var(--whatsapp-green); font-weight: 600;">
                           Chat with Dispatcher
                         </a>
                       </p>
-                      <span style="font-size: 0.75rem; color: var(--color-text-muted);">Fast responses for itinerary inquiries</span>
+                      <span style="font-size: 0.75rem; color: var(--text-dim);">Fast response for all route queries</span>
                     </div>
                   </div>
 
@@ -2912,7 +2763,7 @@
                     <div>
                       <h4 style="font-size: 1rem;">Email Desk</h4>
                       <p style="font-size: 0.9rem; margin-top: 0.2rem;">
-                        <a href="mailto:dispatch@auracab.com" style="color: var(--color-charcoal-dark);">dispatch@auracab.com</a>
+                        <a href="mailto:dispatch@auracab.com" style="color: #ffffff;">dispatch@auracab.com</a>
                       </p>
                     </div>
                   </div>
@@ -2931,27 +2782,26 @@
                 </div>
               </div>
 
-              <!-- Right Column: Quick Contact Form -->
               <div>
-                <div class="contact-card-box">
+                <div class="content-box">
                   <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;">Send a General Inquiry</h3>
-                  <p style="font-size: 0.85rem; margin-bottom: 1.5rem;">Fills directly to our WhatsApp support channel.</p>
+                  <p style="font-size: 0.85rem; margin-bottom: 1.5rem;">Sends directly to our WhatsApp support channel.</p>
                   
                   <form id="contactForm" novalidate>
                     <div class="form-group">
                       <label class="form-label" for="ctName">Your Name *</label>
-                      <input type="text" class="form-control no-icon" id="ctName" placeholder="John Doe" required>
+                      <input type="text" class="form-control no-icon" id="ctName" placeholder="Your Name" required>
                       <span class="form-error" id="ctNameError">Name is required.</span>
                     </div>
 
                     <div class="form-group">
                       <label class="form-label" for="ctSubject">Subject *</label>
-                      <input type="text" class="form-control no-icon" id="ctSubject" placeholder="e.g. Outstation fare query or airport transfer" required>
+                      <input type="text" class="form-control no-icon" id="ctSubject" placeholder="e.g. Outstation quote or airport pickup" required>
                     </div>
 
                     <div class="form-group">
                       <label class="form-label" for="ctMessage">Message *</label>
-                      <textarea class="form-control no-icon" id="ctMessage" rows="4" placeholder="How can our taxi service assist you today?" required></textarea>
+                      <textarea class="form-control no-icon" id="ctMessage" rows="4" placeholder="How can our taxi service assist you?" required></textarea>
                       <span class="form-error" id="ctMessageError">Message is required.</span>
                     </div>
 
@@ -2969,26 +2819,26 @@
       initContactForm();
     }
 
-    /* --- PAGE 10: 404 NOT FOUND --- */
+    /* VIEW 10: 404 NOT FOUND (Only on invalid manual hashes like #/invalid) */
     function render404Page() {
       document.title = 'Page Not Found | AuraCab';
-      const app = document.getElementById('appContent');
+      const root = document.getElementById('app-root');
 
-      app.innerHTML = `
+      root.innerHTML = `
         <div class="page-hero">
-          <div class="container" style="text-align: center; padding: 5rem 0;">
-            <div style="font-size: 4rem; color: var(--color-amber-accent); font-weight: 800; line-height: 1; margin-bottom: 1rem;">
+          <div class="container" style="text-align: center; padding: 4.5rem 0;">
+            <div style="font-size: 4rem; color: var(--accent-amber); font-weight: 800; line-height: 1; margin-bottom: 1rem;">
               404
             </div>
-            <h1 class="section-title" style="color: #ffffff; margin-bottom: 1rem;">Page Not Found</h1>
-            <p style="color: #cbd5e1; max-width: 500px; margin: 0 auto 2rem;">
-              The page or route you were looking for could not be found or may have moved.
+            <h1 class="section-title" style="margin-bottom: 1rem;">Page Not Found</h1>
+            <p style="max-width: 500px; margin: 0 auto 2rem;">
+              The page or destination you requested was not recognized. Return to the homepage to plan your trip.
             </p>
             <div style="display: flex; gap: 1rem; justify-content: center;">
-              <a href="/" class="btn btn-primary" data-route="/">
-                <i class="fa-solid fa-house"></i> Return Home
+              <a href="#/" class="btn btn-amber" data-route="/">
+                <i class="fa-solid fa-house"></i> Return to Homepage
               </a>
-              <a href="/book" class="btn btn-outline-white" data-route="/book">
+              <a href="#/book" class="btn btn-outline" data-route="/book">
                 Book a Taxi
               </a>
             </div>
@@ -2997,22 +2847,18 @@
       `;
     }
 
-    /**
-     * ==========================================================================
-     * FORM INITIALIZERS & WHATSAPP GENERATORS
-     * ==========================================================================
-     */
-
+    /* ==========================================================================
+       5. FORM INITIALIZATION & WHATSAPP GENERATION
+       ========================================================================== */
     function initHeroForm() {
-      const form = document.getElementById('heroQuickBookingForm');
+      const form = document.getElementById('heroQuickForm');
       if (!form) return;
 
-      // Default date to today
       const dateEl = document.getElementById('hwDate');
       if (dateEl) {
-        const todayIso = new Date().toISOString().split('T')[0];
-        dateEl.min = todayIso;
-        dateEl.value = todayIso;
+        const today = new Date().toISOString().split('T')[0];
+        dateEl.min = today;
+        dateEl.value = today;
       }
 
       form.addEventListener('submit', (e) => {
@@ -3053,7 +2899,7 @@ Date: ${date}
 Time: ${time}
 Passengers: ${passengers}
 
-Please share the available vehicle options and fare quote.`;
+Please share the available options and fare quote.`;
 
         window.open(getWhatsAppUrl(msg), '_blank', 'noopener,noreferrer');
       });
@@ -3124,9 +2970,9 @@ Please share the available vehicle options and fare quote.`;
 
         if (!valid) return;
 
-        let returnSection = '';
+        let returnPart = '';
         if (tripType.includes('Round-Trip') && returnDate) {
-          returnSection = `\nReturn Date: ${returnDate}`;
+          returnPart = `\nReturn Date: ${returnDate}`;
         }
 
         const msg = `Hello AuraCab, I would like to enquire about a taxi booking.
@@ -3137,7 +2983,7 @@ Vehicle Preference: ${vehicle}
 Pickup: ${pickup}
 Destination: ${drop}
 Date: ${date}
-Pickup Time: ${time}${returnSection}
+Pickup Time: ${time}${returnPart}
 Passengers: ${passengers}
 Notes: ${special}
 
@@ -3187,9 +3033,6 @@ Looking forward to your assistance.`;
       });
     }
 
-    /**
-     * CONTEXTUAL WHATSAPP HANDLERS
-     */
     function handleDirectCarEnquiry(vehicleName) {
       const msg = `Hello AuraCab, I would like to enquire about booking a ${vehicleName}. Please share the availability and fare options.`;
       window.open(getWhatsAppUrl(msg), '_blank', 'noopener,noreferrer');
@@ -3210,9 +3053,9 @@ Looking forward to your assistance.`;
       window.open(getWhatsAppUrl(msg), '_blank', 'noopener,noreferrer');
     }
 
-    /**
-     * MOBILE DRAWER LOGIC
-     */
+    /* ==========================================================================
+       6. MOBILE DRAWER INTERACTION
+       ========================================================================== */
     const mobileBackdrop = document.getElementById('mobileBackdrop');
     const mobileDrawer = document.getElementById('mobileDrawer');
     const mobileToggle = document.getElementById('mobileMenuToggle');
@@ -3236,7 +3079,6 @@ Looking forward to your assistance.`;
     if (drawerClose) drawerClose.addEventListener('click', closeMobileDrawer);
     if (mobileBackdrop) mobileBackdrop.addEventListener('click', closeMobileDrawer);
 
-    // Accordions inside drawer
     const fleetAccordion = document.getElementById('mobileFleetAccordionToggle');
     const fleetSubmenu = document.getElementById('mobileFleetSubmenu');
     const fleetArrow = document.getElementById('fleetArrow');
@@ -3263,16 +3105,15 @@ Looking forward to your assistance.`;
       });
     }
 
-    // Escape key listener for modal drawer
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mobileDrawer && mobileDrawer.classList.contains('open')) {
         closeMobileDrawer();
       }
     });
 
-    /**
-     * INITIALIZATION
-     */
+    /* ==========================================================================
+       7. INITIALIZATION
+       ========================================================================== */
     window.addEventListener('DOMContentLoaded', () => {
       router.init();
     });
